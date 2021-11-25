@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 23, 2021 lúc 04:44 PM
+-- Thời gian đã tạo: Th10 25, 2021 lúc 12:36 PM
 -- Phiên bản máy phục vụ: 10.4.18-MariaDB
 -- Phiên bản PHP: 8.0.3
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `bigshoes`
+-- Cơ sở dữ liệu: `staffcoffee`
 --
 
 -- --------------------------------------------------------
@@ -105,7 +105,7 @@ INSERT INTO `hang_hoa` (`ma_hh`, `ten_hh`, `hinh`, `don_gia`, `giam_gia`, `mo_ta
 (110, 'Ly Inox Ống Hút Xanh Biển', 'Binh-inox-ong-hut-xanh-bien.jpg', 280000, 5, 'Màu xanh \"chốt\" gì cũng nhanh - Chiếc ly inbox kèm ống hút mang sắc xanh này sẽ là người bạn đồng hành may mắn mỗi ngày bên bạn, nước ngon hơn, nhiều cảm hứng hơn. Dung tích: 500 ml Chất liệu: Inox, nhựa', 32),
 (111, 'Ly Inox Ống Hút Hồng Xanh', 'Binh-inox-ong-hut-xanh-hong.jpg', 280000, 5, 'Màu hồng xanh may mắn tới nhanh - Chiếc ly inbox kèm ống hút mang sắc xanh này sẽ là người bạn đồng hành may mắn mỗi ngày bên bạn, nước ngon hơn, nhiều cảm hứng hơn. Dung tích: 500 ml Chất liệu: Inox, nhựa', 32),
 (112, 'Ly Farm to Cup (Cao)', 'Ly-Farm-to-cup-cao.jpg', 150000, 2, 'Lấy cảm hứng từ vùng đất cà phê Việt Nam, ly sứ Farm To Cup sẽ cho bạn trải nghiệm đầy cảm hứng với món yêu thích tại nhà, tại nơi làm việc mỗi ngày. Dung tích ly: 400ml Thành phần: Cao lanh, đất sét, tráng thạch, men màu.', 32),
-(113, 'Ly Farm to Cup (Thấp)', 'Ly-Farm-to-cup-thap.jpg', 120000, 2, 'Lấy cảm hứng từ vùng đất cà phê Việt Nam, ly sứ Farm To Cup sẽ cho bạn trải nghiệm đầy cảm hứng với món yêu thích tại nhà, tại nơi làm việc mỗi ngày. Dung tích ly: 300ml Thành phần: Cao lanh, đất sét, tráng thạch, men màu.', 32);
+(113, 'Ly Farm to Cup (Thấp)', 'Ly-Farm-to-cup-thap.jpg', 120000, 3, 'Lấy cảm hứng từ vùng đất cà phê Việt Nam, ly sứ Farm To Cup sẽ cho bạn trải nghiệm đầy cảm hứng với món yêu thích tại nhà, tại nơi làm việc mỗi ngày. Dung tích ly: 300ml Thành phần: Cao lanh, đất sét, tráng thạch, men màu.', 32);
 
 -- --------------------------------------------------------
 
@@ -121,6 +121,14 @@ CREATE TABLE `hoa_don` (
   `ma_kh` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Đang đổ dữ liệu cho bảng `hoa_don`
+--
+
+INSERT INTO `hoa_don` (`ma_hd`, `ngay_mua`, `ghi_chu`, `tinh_trang`, `ma_kh`) VALUES
+(110, '23-10-2021', '', '1', 'admin'),
+(111, '11-11-2021', '', '0', 'admin');
+
 -- --------------------------------------------------------
 
 --
@@ -133,6 +141,14 @@ CREATE TABLE `hoa_don_chi_tiet` (
   `don_gia` int(11) NOT NULL,
   `ma_hh` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `hoa_don_chi_tiet`
+--
+
+INSERT INTO `hoa_don_chi_tiet` (`ma_hd`, `so_luong`, `don_gia`, `ma_hh`) VALUES
+(110, 1, 35000, 65),
+(111, 1, 336000, 106);
 
 -- --------------------------------------------------------
 
@@ -210,7 +226,8 @@ INSERT INTO `payments` (`id`, `order_id`, `thanh_vien`, `money`, `note`, `vnp_re
 (4, '596509313', 'CT2', 5000000, 'học phí', '00', '13407176', 'NCB', '2020-10-23 00:00:00'),
 (5, '70267166', 'CT2', 5000000, 'học phí', '00', '13407178', 'NCB', '2020-10-23 00:00:00'),
 (6, '1672349048', 'CT1', 150000, 'học phí', '00', '13407729', 'NCB', '2020-10-23 21:00:00'),
-(7, '106', '', 2070000, 'Noi dung thanh toan', '00', '13563934', 'NCB', '2021-08-13 21:00:00');
+(7, '106', '', 2070000, 'Noi dung thanh toan', '00', '13563934', 'NCB', '2021-08-13 21:00:00'),
+(8, '110', '', 35000, 'Noi dung thanh toan', '00', '13610095', 'NCB', '2021-10-23 21:00:00');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -283,7 +300,7 @@ ALTER TABLE `hang_hoa`
 -- AUTO_INCREMENT cho bảng `hoa_don`
 --
 ALTER TABLE `hoa_don`
-  MODIFY `ma_hd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
+  MODIFY `ma_hd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
 
 --
 -- AUTO_INCREMENT cho bảng `loai_hang`
@@ -295,7 +312,7 @@ ALTER TABLE `loai_hang`
 -- AUTO_INCREMENT cho bảng `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
