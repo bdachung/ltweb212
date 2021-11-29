@@ -35,7 +35,7 @@
         session_set_cookie_params($lifetime,'/');
         session_start();
         
-		require_once ('../admin/dao/khach-hang.php');
+		require_once ('../tai-khoan/dao/khach-hang.php');
 
 		extract($_REQUEST);
 		if(array_key_exists('btn_login',$_REQUEST)){
@@ -44,7 +44,7 @@
 				if($user['mat_khau'] == $mat_khau){
 					if($user['vai_tro'] == 1){
 						$_SESSION['user'] = $user;
-						header("location: ../trang-chinh/index.php");
+						header("location: ../admin/index.php");
 					}
 					if($user['vai_tro'] == 0){
 						$_SESSION['user'] = $user;

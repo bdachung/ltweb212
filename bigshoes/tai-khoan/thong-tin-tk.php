@@ -33,7 +33,7 @@
 	<!-- CODE XỬ LÝ PHP -->
 	<?php
         session_start();
-		require_once ('../admin/dao/khach-hang.php');
+		require_once ('../tai-khoan/dao/khach-hang.php');
         
         extract($_REQUEST);
         if(array_key_exists('btn_update',$_REQUEST)){
@@ -111,7 +111,7 @@
 						<a class="txt1" href="../../bigshoes/tai-khoan/cap-nhat-tk.php">
 							Cập nhật tài khoản ?
 						</a> or
-						<a class="txt1" href="../../bigshoes/tai-khoan/doi-mk.php.php">
+						<a class="txt1" href="../../bigshoes/tai-khoan/doi-mk.php">
 							Đổi mật khẩu ?
 						</a>
 					</div>

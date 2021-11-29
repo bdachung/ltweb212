@@ -32,7 +32,7 @@
 
 	<!-- CODE XỬ LÝ PHP -->
 	<?php
-		require_once ('../admin/dao/khach-hang.php');
+		require_once ('../tai-khoan/dao/khach-hang.php');
 
 		extract($_REQUEST);
 		if(array_key_exists('btn_register',$_REQUEST)){
