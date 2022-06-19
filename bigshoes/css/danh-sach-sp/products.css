@@ -4,6 +4,8 @@
   box-sizing: border-box;
 }
 
+
+
 .body {
   font-family: "Roboto Condensed", sans-serif;
 }
@@ -148,7 +150,8 @@
 }
 
 .sanpham img {
-  width: 100%;
+  width: 200px;
+  height: 200px;
 }
 
 .text {
@@ -233,6 +236,11 @@
   position: relative;
 }
 
+.item img{
+  width: 200px;
+  height: 200px;
+}
+
 .item .noi-bat{
   position: absolute;
   font-size: 12px;
@@ -265,7 +273,7 @@
 }
 
 .header-element{
-  background-color: rgb(54, 54, 54);
+  background-color: rgb(48, 121, 14);
   text-align: center;
 }
 
@@ -273,12 +281,20 @@
   display: none;
 }
 
+
+
 @media only screen and (max-width: 768px){
   .sanpham{
     width: 48%;
     margin: 3px;
     border: 1px solid #dfdfdfff;
     box-shadow: 1px 1px;
+    text-align: center;
+  }
+
+  .sanpham img{
+    width: 150px;
+    height: 150px;
   }
 
   .content {
@@ -314,7 +330,8 @@
 
   .sale-up-content a img
   {
-    width: 100%;
+    width: 150px;
+    height: 150px;
   }
 
   .san-pham-content{
@@ -368,6 +385,10 @@
     right: 3%;
   }
   .nav-web{
+    display: none;
+  }
+
+  .now2{
     display: none;
   }
 }

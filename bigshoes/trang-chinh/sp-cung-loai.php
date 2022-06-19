@@ -321,14 +321,6 @@
         </div>
     </div>
 
-
-
-
-
-
-
-
-
     <script type="text/javascript">
         const nextIcon = ' <i class="fa fa-chevron-left" style="font-size:36px;color:black"></i>';
         const preIcon = ' <i class="fa fa-chevron-right" style="font-size:36px;color:black"></i>';
@@ -342,11 +334,11 @@
             ],
             responsive: {
                 0: {
-                    items: 1,
+                    items: 2,
                     nav: true
                 },
                 600: {
-                    items: 3,
+                    items: 2,
                     nav: false
                 },
                 1200: {

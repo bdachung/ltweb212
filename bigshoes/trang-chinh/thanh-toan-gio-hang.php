@@ -84,7 +84,6 @@ ob_start();
         </div>
     </div>
 
-
     <div class="dropleft nav-mobile">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-expanded="false" style="background-color: #d7d6d6; color: black;">
         </button>
@@ -95,7 +94,8 @@ ob_start();
             <li><a class="dropdown-item" href="tin-tuc.php">TIN TỨC</a></li>
             <li><a class="dropdown-item" href="lien-he.php">LIÊN HỆ</a></li>
         </ul>
-    </div>   
+    </div>  
+
 
     <div class="container-fluid nav-web">
         <div class="row">

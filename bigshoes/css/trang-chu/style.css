@@ -304,6 +304,11 @@ body {
   width:100%;
 }
 
+.item img{
+  width: 200px;
+  height: 200px;
+}
+
 .danh-muc-mobile{
   display:none;
 }
@@ -332,7 +337,7 @@ body {
   .danh-muc-mobile{
     display:block;
     position:fixed;
-    top:-1%;
+    top:5%;
     right:33%;
   }
 
@@ -342,7 +347,7 @@ body {
     text-align:center;
     padding: 3px 3px;
     left:17%;
-    top:20%;
+    top:12%;
   }
 
 

@@ -8,11 +8,25 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
     <title>Trang chủ</title>
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/trang-chu/plugin/css/owl.carousel.min.css">
     <link rel="stylesheet" href="../css/trang-chu/plugin/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <link rel="stylesheet" href="../css/trang-chu/style.css">
+    <style>
+        @media only screen and (max-width: 768px){
+            .now2{
+                display: none;
+            }
+
+            .item img{
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -426,11 +440,11 @@
             ],
             responsive: {
                 0: {
-                    items: 1,
+                    items: 2,
                     nav: true
                 },
                 600: {
-                    items: 1,
+                    items: 2,
                     nav: false
                 },
                 1200: {
