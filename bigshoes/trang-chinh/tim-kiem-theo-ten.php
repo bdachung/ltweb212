@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../bigshoes/css/danh-sach-sp/products.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
@@ -13,6 +12,7 @@
     <link rel="stylesheet" href="../../bigshoes/css/danh-sach-sp/plugin/css/owl.carousel.min.css">
     <link rel="stylesheet" href="../../bigshoes/css/danh-sach-sp/plugin/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../bigshoes/css/danh-sach-sp/products.css">
     <title>Document</title>
 </head>
 
@@ -21,12 +21,12 @@
     <script type="text/javascript" src="../../bigshoes/css/danh-sach-sp/plugin/js/owl.carousel.min.js"></script>
 
 
-    <div class="container-fluid">
+    <div class="container-fluid ">
         <div class="row">
-            <div class="col-md-4" style="background-color: rgb(54, 54, 54);text-align: center">
+            <div class="col-md-4 header-element">
                 <div class="login">
 
-                
+
                   <!-- CODE CHECK ĐĂNG NHẬP -->
                   <?php 
                     session_start();
@@ -34,50 +34,62 @@
                   ?>
                   <a href="../../bigshoes/tai-khoan/dang-nhap.php"><p><strong>ĐĂNG NHẬP / ĐĂNG KÍ</strong></p></a> 
                     <?php }else{ ?>
-                        <a href="../../bigshoes/tai-khoan/thong-tin-tk.php"><p><strong>XIN CHÀO <?=$_SESSION['user']['ho_ten']?></strong></p></a>
+                  <a href="../../bigshoes/tai-khoan/thong-tin-tk.php"><p><strong>XIN CHÀO <?=$_SESSION['user']['ho_ten']?></strong></p></a>
                   <?php } ?>
                 </div>
 
 
 
             </div>
-            <div class="col-md-4" style="background-color: rgb(54, 54, 54);text-align: center">
+            <div class="col-md-4 header-element">
                 <div class="logo">
-                    <a href="index.php"><img src="../css/trang-chu/img/logo11.png" alt="anh"></a>
+                <a href="index.php"><img src="../css/trang-chu/img/logo11.png" alt="anh"></a>
                 </div>
             </div>
-            <div class="col-md-4" style="background-color: rgb(54, 54, 54);text-align: center">
+            <div class="col-md-4 header-element">
                 <!-- MÃ CODE PHP CHECK SỐ LƯỢNG SẢN PHẨM THÊM VÀO GIỎ HÀNG  -->
 
-                <div class="giohang" style = "position: reletive;">
-               
+                <div class="giohang" style = "position: relative;">
+                <ul style="list-style-type: none;">
+                        <!-- <li><p style="color: rgb(212, 212, 212);font-size: 14px;">GIỎ HÀNG</p></li> -->
+                    <a href="danh-sach-gio-hang.php"><li><i class="fa fa-shopping-basket" style="font-size:28px;color:rgb(255, 255, 255)"></i>
                     <?php
-                            $sll = 0;
-                            if(isset($_SESSION['cart'])){
-                                foreach($_SESSION['cart'] as $item){
-                                    extract($item);
-                                    $sll+= $sl;
-                                }
+                        $sll = 0;
+                        if(isset($_SESSION['cart'])){
+                            foreach($_SESSION['cart'] as $item){
+                                extract($item);
+                                $sll+= $sl;
                             }
-                        ?>
-                    <span style = "position: absolute;padding:3px 8px;background-color:#fff;border-radius:50px;left:295px;top:25px;" ><?=$sll?></span>
-                <ul>
-                        <li><i class="fa fa-search" style="font-size:20px;color:rgb(226, 226, 226)"></i></li>
-                        <li><p style="color: rgb(212, 212, 212);font-size: 14px;">GIỎ HÀNG</p></li>
-                       <a href="danh-sach-gio-hang.php"><li><i class="fa fa-shopping-basket" style="font-size:28px;color:rgb(255, 255, 255)"></i></li></a> 
-                    </ul>
+                        }
+                    ?>
+                    <span style = "position: relative;padding:3px 8px;background-color:#fff;border-radius:50px;left:1%;" ><?=$sll?></span></li></a> 
+                    
+                </ul>
                 </div>
             </div>
         </div>
     </div>
 
+    <div class="dropleft nav-mobile">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-expanded="false" style="background-color: #d7d6d6; color: black;">
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="index.php">TRANG CHỦ</a></li>
+            <li><a class="dropdown-item" href="danh-sach-sp.php">SẢN PHẨM</a></li>
+            <li><a class="dropdown-item" href="gioi-thieu.php">GIỚI THIỆU</a></li>
+            <li><a class="dropdown-item" href="tin-tuc.php">TIN TỨC</a></li>
+            <li><a class="dropdown-item" href="lien-he.php">LIÊN HỆ</a></li>
+        </ul>
+    </div>  
 
 
 
 
 
 
-    <div class="container-fluid">
+
+
+    <div class="container-fluid nav-web">
         <div class="row">
             <div class="col-md-12" style="background-color: rgb(211, 211, 211);">
                 <div class="nav">
@@ -97,29 +109,28 @@
 
     <div class="container" style="margin-top: 20px;">
         <div class="row">
-            <div class="col-md-7" style="
-    padding-left: 0px;
-">
+            <div class="col-md-7" style="padding-left: 0px;">
                 <div class="chuyen">
                     <p><span>TRANG CHỦ </span> / SẢN PHẨM</p>
                 </div>
             </div>
-            <div class="col-md-5" style="padding-right: 0px;">
-                <div class="thutu">
-                    <ul>
-                        <li>
-                            <p style="margin-top: 10px;">Hiển thị tất cả các sản phẩm</p>
-                        </li>
-                        <li>
-                            <select>
-                               <option>Thứ tự mặc định</option>
-                               <option>Thứ tự theo mức độ phổ biến</option>
-                               <option>Thứ tự thấp đến cao</option>
-                           </select>
-                        </li>
-                    </ul>
-                </div>
-
+            <!-- CODE PHP DANH MỤC -->
+            <div class="dropdown danh-muc-mobile">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-expanded="false" style="background-color: black;">
+                    DANH MỤC
+                </button>
+                <?php
+                    require_once ('../../bigshoes/admin/dao/loai-hang.php');
+                    extract($_REQUEST);
+                    $items = loai_hang_select_all();
+                ?>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <?php foreach($items as $item){
+                    extract($item);
+                ?>
+                    <li><a class="dropdown-item" href="sp-cung-loai.php?ma_loai=<?=$ma_loai?>"><?=$ten_loai?></a> 
+                    <?php } ?></li>
+                </ul>
             </div>
         </div>
     </div>
@@ -128,31 +139,25 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-3" style="padding-left: 0px;margin-top: 42px;">
-
-                <div class="row" style="
-    margin-left: 0px;
-">
+            <div class="col-md-3 content" style="padding-left: 0px;margin-top: 42px;">
+                <div class="row search-bar" style="margin-left: 0px;">
                     <!-- Tìm kiếm theo tên sản phẩm -->
                     <form action="tim-kiem-theo-ten.php" method="post">
 
                     <div class="serch">
-                        <input type="text" placeholder="Tìm kiếm..." name="keywords">
+                        <input type="text" placeholder="Tìm kiếm..." name="keywords" required>
                         <button type="submit" name="search-keywords"><i class="fa fa-search" style="font-size:20px;color:rgb(255, 255, 255)"></i></button>
                     </div>
                     </form>
                 </div>
-                <div class="row" style="
-    margin-left: 0px;
-">
-
+                <div class="row" style="margin-left: 0px;">
                     <!-- CODE PHP DANH MỤC -->
                     <?php
                         require_once ('../../bigshoes/admin/dao/loai-hang.php');
                         extract($_REQUEST);
                         $items = loai_hang_select_all();
                     ?>
-                    <div class="row" style="margin-top: 35px;margin-left: 0px;">
+                    <div class="row danh-muc-web" style="margin-top: 35px;margin-left: 0px;">
 
                         <ul class="list-group">
                             <li class="list-group-item active">DANH MỤC</li>
@@ -165,36 +170,10 @@
 
                     </div>
 
-                    <div class="row" style="margin-top: 35px;margin-left: 0px;">
-
-                        <ul class="list-group">
-                            <!-- CODE PHP SẢN PHẨM BÁN CHẠY -->
-                        <?php
-                            require_once ('../../bigshoes/admin/dao/hang-hoa.php');
-                            extract($_REQUEST);
-                            $items = hang_hoa_sale();
-                        
-                        ?>
-                            <li class="list-group-item active">SẢN PHẨM SALE UP 10 - 50%</li>
-                            <?php foreach($items as $item){
-                                extract($item);
-                                ?>
-                            <li class="list-group-item">
-                                <div class="row">
-                                    <div class="col-sm-4"><a href="chi-tiet-sp.php?ma_hh=<?=$ma_hh?>&ma_loai=<?=$ma_loai?>"><img style="width:80px;" src="../../bigshoes/css/admin/images/products/<?=$hinh?>" alt=""></a></div>
-                                    <div class="col-sm-8"><?=$ten_hh?><br><br><b><?=number_format($don_gia-($don_gia*$giam_gia/100))?> VNĐ</b></div>
-                                </div>
-                            </li>
-
-
-
-                            <?php } ?>
-                        </ul>
-
-                    </div>
-
-
-                    
+                    <!-- SAN PHAM SALE UP -->
+                    <?php
+                        include("san-pham-sale-up.php");
+                    ?>
 
                 </div>
 
@@ -202,7 +181,7 @@
             </div>
 
             <!-- Sản phẩm nó nằm ở đây -->
-            <div class="col-md-9">
+            <div class="col-md-9 san-pham-content">
 
             <!-- CODE PHP DANH SÁCH SẢN PHẨM -->
             
@@ -237,34 +216,8 @@
 
     </div>
 
-    <div class="container" style="margin-top: 30px;">
-        <div class="row">
-
-            <div class="col-md-12" style="padding-left: 0px;">
-                <div class="spnoibat">
-                    <h5>sản phẩm nỗi bật</h5>
-                    <p></p>
-                </div>
-
-                <div class="owl-carousel owl-theme ">
-
-                    <!-- CODE PHP SẢN PHẨM NỔI BẬT -->
-                    <?php
-                        $items = hang_hoa_noi_bat();
-                        foreach($items as $item){
-                            extract($item);
-                    ?>
-                    <div class="item">
-                        <a href="chi-tiet-sp.php?ma_hh=<?=$ma_hh?>"><img style="width: 200px" src="../../bigshoes/css/admin/images/products/<?=$hinh?>" alt="ds"></a>
-                    </div>
-                        <?php } ?>
-
-
-
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- CODE SAN PHAM NOI BAT -->
+    <?php include("san-pham-noi-bat.php"); ?>
 
     <div class="container-fluid now2" style="margin-top: 70px;">
         <div class="row">
@@ -407,6 +360,9 @@
                 }
             }
         })
+        $(document).ready(function () {
+            $('.dropdown-toggle').dropdown();
+        });
     </script>
 
 

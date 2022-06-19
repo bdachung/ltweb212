@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="../../bigshoes/css/chi-tiet-sp/plugin/css/owl.carousel.min.css">
     <link rel="stylesheet" href="../../bigshoes/css/chi-tiet-sp/plugin/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../bigshoes/css/danh-sach-sp/products.css">
+    <link rel="stylesheet" hreff="../../bigshoes/css/gioi-thieu/gioithieu.css"> 
     <title>Document</title>
 </head>
 
@@ -21,9 +23,9 @@
     <script type="text/javascript" src="../../bigshoes/css/chi-tiet-sp/plugin/js/owl.carousel.min.js"></script>
 
 
-    <div class="container-fluid">
+    <div class="container-fluid ">
         <div class="row">
-            <div class="col-md-4" style="background-color: rgb(54, 54, 54);text-align: center">
+            <div class="col-md-4 header-element">
                 <div class="login">
 
 
@@ -41,43 +43,54 @@
 
 
             </div>
-            <div class="col-md-4" style="background-color: rgb(54, 54, 54);text-align: center">
+            <div class="col-md-4 header-element">
                 <div class="logo">
                 <a href="index.php"><img src="../css/trang-chu/img/logo11.png" alt="anh"></a>
                 </div>
             </div>
-            <div class="col-md-4" style="background-color: rgb(54, 54, 54);text-align: center">
+            <div class="col-md-4 header-element">
                 <!-- MÃ CODE PHP CHECK SỐ LƯỢNG SẢN PHẨM THÊM VÀO GIỎ HÀNG  -->
 
-                <div class="giohang" style = "position: reletive;">
-               
+                <div class="giohang" style = "position: relative;">
+                <ul style="list-style-type: none;">
+                        <!-- <li><p style="color: rgb(212, 212, 212);font-size: 14px;">GIỎ HÀNG</p></li> -->
+                    <a href="danh-sach-gio-hang.php"><li><i class="fa fa-shopping-basket" style="font-size:28px;color:rgb(255, 255, 255)"></i>
                     <?php
-                            $sll = 0;
-                            if(isset($_SESSION['cart'])){
-                                foreach($_SESSION['cart'] as $item){
-                                    extract($item);
-                                    $sll+= $sl;
-                                }
+                        $sll = 0;
+                        if(isset($_SESSION['cart'])){
+                            foreach($_SESSION['cart'] as $item){
+                                extract($item);
+                                $sll+= $sl;
                             }
-                        ?>
-                    <span style = "position: absolute;padding:3px 8px;background-color:#fff;border-radius:50px;left:295px;top:25px;" ><?=$sll?></span>
-                <ul>
-                        <li><i class="fa fa-search" style="font-size:20px;color:rgb(226, 226, 226)"></i></li>
-                        <li><p style="color: rgb(212, 212, 212);font-size: 14px;">GIỎ HÀNG</p></li>
-                       <a href="danh-sach-gio-hang.php"><li><i class="fa fa-shopping-basket" style="font-size:28px;color:rgb(255, 255, 255)"></i></li></a> 
-                    </ul>
+                        }
+                    ?>
+                    <span style = "position: relative;padding:3px 8px;background-color:#fff;border-radius:50px;left:1%;" ><?=$sll?></span></li></a> 
+                    
+                </ul>
                 </div>
             </div>
         </div>
     </div>
 
+    <div class="dropleft nav-mobile">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-expanded="false" style="background-color: #d7d6d6; color: black;">
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="index.php">TRANG CHỦ</a></li>
+            <li><a class="dropdown-item" href="danh-sach-sp.php">SẢN PHẨM</a></li>
+            <li><a class="dropdown-item" href="gioi-thieu.php">GIỚI THIỆU</a></li>
+            <li><a class="dropdown-item" href="tin-tuc.php">TIN TỨC</a></li>
+            <li><a class="dropdown-item" href="lien-he.php">LIÊN HỆ</a></li>
+        </ul>
+    </div>  
 
 
 
 
 
 
-    <div class="container-fluid">
+
+    <div class="container-fluid nav-web">
         <div class="row">
             <div class="col-md-12" style="background-color: rgb(211, 211, 211);">
                 <div class="nav">
@@ -97,34 +110,35 @@
     <div class="container" style="margin-top: 80px;">
         <div class="row">
         <div class="col-sm-4">
-            <img src="https://1.bp.blogspot.com/-HWX6ekoJ5Vk/X0JwN7_oP7I/AAAAAAAAyR8/syDqA9n6bjYAWv0JIC51gDPw0hydrLxYgCLcBGAsYHQ/s1600/Ly-Cafe%2B%25282%2529.jpg" alt="" style = "width:100%;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/13/Supermarkt.jpg" alt="" style = "width:100%;">
         </div>
         <div class="col-sm-8">
 
         <div class="row">
             <div class="col-sm-12">
-                        <h2>TẤT TẦN TẬT VỀ STAFF COFFEE HOUSE</h2>
-                        <p style = "text-align:justify;">STAFF COFFEE HOUSE – Hệ thống cửa hàng, Website kinh doanh cafe tại Thành phố Hồ Chí Minh, với sứ mạng đưa “nền văn hóa thưởng thức cà phê” đến gần hơn với các bạn trẻ Việt Nam, chúng tôi cam kết mang đến cho các bạn những loại cà phê chất thưởng và thơm ngon nhất tại thị trường Việt Nam. <br> <br>
+                        <h2>VỀ GROCERY HOUSE</h2>
+                        <p style = "text-align:justify;">GROCERY HOUSE - Một hệ thống siêu thị cung cấp thực phẩm sạch, đạt tiêu chí an toàn thực phẩm được Cục An toàn thực phẩm Việt Nam cấp phép. Ngoài các mặt hàng thực phẩm trong nước, hệ thống siêu thị cũng cung cấp rất nhiều thực phẩm ngoại nhằm đa dạng hóa mặt hàng. Một điều quan trọng nữa, hệ thống luôn luôn có ưu đãi dành tặng cho khách hàng vì vậy GROCERY HOUSE sẽ luôn là lựa chọn số một nếu bạn đã từng dùng mặt hàng tại hệ thống siêu thị GROCERY HOUSE.<br> <br>
 
-Chính thức hoạt động từ năm 2021, đi cùng những cố gắng và nỗ lực không ngừng nghỉ, đến thời điểm hiện tại, STAFF COFFEE HOUSE đã đánh dấu mình vào một vị trí vững chắc trong văn hóa thưởng thức cafe ở thị trường miền Nam vốn rất năng động này. Sau khi thành lập và phát triển, 4 cửa hàng được ra đời, đều nằm trong các khu vực trung tâm thuộc thành phố Hồ Chí Minh. Thời gian sắp tới, STAFF COFFEE HOUSE sẽ tiếp tục mở rộng thêm các chi nhánh nữa đặt tại các thành phố lớn. Ngay bây giờ, hãy cùng tìm hiểu vài nét sơ lược về cả 4 chi nhánh “to bự” này nhé!</p>
+</p>
             </div>
         </div>
-
-        <div class="row">
+        </div>
+        <div class="row" style="padding-left:12px; padding-top: 10px;">
             <div class="col-sm-12">
-                        <h4>CỬA HÀNG STAFF COFFEE HOUSE</h4>
+                        <h4>CỬA HÀNG GROCERY HOUSE</h4>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-sm-6" style=" border-right:double #c30005 5px">
-            <b>CN1: 777 Làng Đại Học – Thành phố Hồ Chí Minh</b><br>
-            <p style = "text-align:justify;margin-top:10px;">Ra đời vào năm 2021, là đứa con đầu tiên, là cột mốc khởi đầu cho quá trình “vươn mình ra biển lớn” của thương hiệu STAFF COFFEE HOUSE. Mặc dù, không gian cửa hàng lúc này chưa thực sự lớn, các dòng sản phẩm còn đơn giản và hạn chế. Đồng thời, những dịch vụ chăm sóc và hỗ trợ khách hàng vẫn còn rất nhiều thiếu sót. Tuy nhiên, mọi cố gắng không biết mệt mỏi của chúng tôi cuối cùng đã được đền đáp một cách xứng đáng…….</p>
+        <div class="row gioi-thieu-content" style="padding-left:12px;">
+            <div class="col-sm-6" style=" border-right:double #c30005 5px; ">
+            <b>CN1: Khu F tầng 2, nhà văn hóa sinh viên – Thành phố Thủ Đức - TPHCM</b><br>
+            <p style = "text-align:justify;margin-top:10px; padding: 5px;">Được thành lập vào năm 2020, với các mặt hàng chủ yếu đến từ trong nước, GROCERY HOUSE đã từ từ xây dựng được niềm tin đến các khách hàng đến từ khu vực TP Thủ Đức. Đặc biệt, với giá cả phải chăng, hệ thống đã thu hút được các khách hàng đến từ các quận lân cận.</p>
             </div>
             <div class="col-sm-6">
-            <b>CN2: 999 – Ba tháng Hai – Quận 10 - Thành phố Hồ Chí Minh</b><br>
-            <p style = "text-align:justify;margin-top:10px;">……2 năm trôi qua, một cửa hàng “bé bự” . Hoàn thiện hơn, mạnh mẽ hơn, không gian cực rộng lớn với các phân khu thưởng thức cafe riêng biệt trải đều trên diện tích hơn 100m2. Nhằm “phổ cập” rộng rãi xu hướng cafe mới cho giới trẻ Sài Thành, đồng thời, trở thành một tụ điểm mua sắm không thể bỏ qua tại thành phố Hồ Chí Minh.</p>
-            </div>
+            <b>CN2: 268A – Lý Thường Kiệt – Quận 10 - TPHCM</b><br>
+            <p style = "text-align:justify;margin-top:10px; padding: 5px;">
+                            Sau 2 năm phấn đấu, hệ thống đã xây dựng thêm một siêu thị tại trung tâm của thành phố Hồ Chí Minh. Hơn nữa, các mặt hàng giờ đây đã được đa dạng hóa không chỉ đến từ trong nước, mà còn từ rất nhiều nước khác nhau. Siêu thị được đặt tại trung tâm thành phố  Hồ Chí Minh với mong muốn sẽ tiếp xúc được nhiều khách hàng hơn nữa.
+            </p>
         </div>
 
         </div>
@@ -137,13 +151,13 @@ Chính thức hoạt động từ năm 2021, đi cùng những cố gắng và n
                     <div class="col-sm-2"><img src="../css/trang-chu/img/freeship.jpg" alt="" style = "width:80px;"></div>
                     <div class="col-sm-10">
                     <b>Miễn phí giao hàng</b> <br>  
-                    Shop miễn phí giao hàng cho tất cả các đơn hàng trên 200.000 VNĐ. Giao hàng nhanh chóng và đảm bảo chất lượng nguyên vẹn cho quý khách !</div>  
+                    Hệ thống hỗ trợ phí vận chuyển cho những đơn hàng từ 150.000 VNĐ trở lên. Chất lượng sản phẩm luôn được đảm bảo.    </div>  
                 </div><br>
                 <div class="row">
                     <div class="col-sm-2"><img src="../css/trang-chu/img/new.jpg" alt="" style = "width:80px;"></div>
                     <div class="col-sm-10">
-                    <b>Cập nhật xu hướng cafe trên thế giới</b> <br>  
-                    Liên tục cập nhật là loại cà phê ngon và đặc sắc trên thế giới vào menu cửa hàng.</div>
+                    <b>Cập nhật mặt hàng mới nhất</b> <br>  
+                    Hễ trên thế giới có gì mới, chúng tôi có cái đó.</div>
                 </div><br>
                
             </div>
@@ -153,14 +167,7 @@ Chính thức hoạt động từ năm 2021, đi cùng những cố gắng và n
                     <div class="col-sm-2"><img src="../css/trang-chu/img/cskh.jpg" alt="" style = "width:80px;"></div>
                     <div class="col-sm-10">
                     <b>Chăm sóc khách hàng</b> <br>  
-Chế độ chăm sóc khách hàng tại shop tận tình , nhiệt tình hỗ trợ và phục vụ quý khách chu đáo.Đáp ứng nhu cầu của mọi khách hàng. Luôn luôn lắng nghe và làm hài lòng quý khách! </div>
-                </div><br>
-                <div class="row">
-                <div class="col-sm-2"><img src="../css/trang-chu/img/thanhtoan.jpg" alt="" style = "width:80px;"></div>
-                    <div class="col-sm-10">
-                    <b>Thanh toán đa dạng</b> <br>  
-Thanh toán tại shop đa dạng bằng cách trả tiền mặt hoặc sử dụng các loại thẻ như : VISA, MASTER CARD ,VÍ ĐIỆN TỬ ....</div>
-                </div><br>
+Dịch vụ chăm sóc khách hàng 24/7. Khách hàng có phàn nàn về chất lượng sản phẩm hay không hài lòng về thái độ của nhân viên, vui lòng liên hệ 99999999 </div>
             </div>
             </div>
     </div>

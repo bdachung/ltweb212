@@ -20,29 +20,49 @@
     <script type="text/javascript" src="../css/trang-chu/plugin/js/owl.carousel.min.js"></script>
 
 
+
     <div class="container-fluid">
         <div class="banner">
-            <video autoplay muted loop id="myVideo">
+            <!-- <video autoplay muted loop id="myVideo">
                 <source src="../css/trang-chu/img/cafe.mp4" type="video/mp4">
                 Your browser does not support HTML5 video.
-              </video>
+              </video> -->
+            <img src="../css/trang-chu/img/wallpaper.jpg" alt="Wallpaper" id="myVideo"> 
             <div class="row">
-
                 <div class="col-sm-2">
-                   
-
                 </div>
+
+                <div class="dropdown danh-muc-mobile" style="margin:10px;">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-expanded="false" style="background-color: black;margin-top:80px;">
+                            TRANG CHỦ
+                        </button>
+
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+
+                                <li><a class="dropdown-item" href="danh-sach-sp.php"> SẢN PHẨM</a></li>
+                                <li><a class="dropdown-item" href="gioi-thieu.php"> GIỚI THIỆU</a></li>
+                                <li><a class="dropdown-item" href="tin-tuc.php"> TIN TỨC</a></li>
+                                <li><a class="dropdown-item" href="lien-he.php"> LIÊN HỆ</a></li>
+                        </ul>
+                </div>
+
+
                 <div class="col-sm-8">
+
+           
                     <div class="nav">
                         <ul>
-                            <li class="active">TRANG CHỦ</li>
-                            <li><a href="danh-sach-sp.php">SẢN PHẨM</a></li>
-                            <li><a href="gioi-thieu.php">GIỚI THIỆU</a></li>
-                            <li><a href="tin-tuc.php">TIN TỨC</a></li>
-                            <li><a href="lien-he.php">LIÊN HỆ</a></li>
+                            <li class="active" style="color:white;">TRANG CHỦ</li>
+                            <li><a href="danh-sach-sp.php" style="color:white;">SẢN PHẨM</a></li>
+                            <li><a href="gioi-thieu.php" style="color:white;">GIỚI THIỆU</a></li>
+                            <li><a href="tin-tuc.php" style="color:white;">TIN TỨC</a></li>
+                            <li><a href="lien-he.php" style="color:white;">LIÊN HỆ</a></li>
                         </ul>
                     </div>
                 </div>
+
+
+
                 <div class="col-sm-2">
                     <div class="sign">
                         <?php
@@ -63,14 +83,15 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="text">
-                        <p class="nho">Cà phê thì phải đen như địa ngục,</p>
-                        <p class="nho">đắng như tử thần và ngọt ngào tựa tình yêu…</p>
-                        <P class="to">Trích - "Sưu tầm"</P>
+                        <p class="nho"> Siêu thị chúng tôi cung cấp các loại thực phẩm tươi sống và đảm bảo an toàn vệ sinh thực phẩm.</p>
+                        <!-- <P class="to">Trích - "Sưu tầm"</P> -->
+
                         <P class="likk">
-                            <a href="danh-sach-sp.php"><span>COFEESHOP</span></a>
+                            <a href="danh-sach-sp.php" style="color:white"><span>Xem Sản Phẩm</span></a>
                         </P>
                     </div>
                 </div>
+                
                 <div class="col-md-6">
 
                 </div>
@@ -79,51 +100,6 @@
         </div>
     </div>
 
-
-    <div class="container" style="margin-top: 50px;">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="caption">
-                    <p>GÓC COFFEE NỔI BẬT </p>
-                    <h2> <span>COFFEE</span> STYLE 2021</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
-    <div class="container" style="margin-top: 30px;">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="anhmoi">
-                    <img src="../css/trang-chu/img/cafe3.jpg" alt="">
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="anhmoi">
-                        <img src="../css/trang-chu/img/cafe1.jpg" alt="">
-                    </div>
-                </div>
-                <div class="row" style="margin-top: 30px;">
-                    <div class="col-md-6">
-                        <div class="anhmoi">
-                            <img src="../css/trang-chu/img/cafe2.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="anhmoi">
-                            <img src="../css/trang-chu/img/cafe4.jpg" alt="">
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-    </div>
 
 
 
@@ -141,8 +117,7 @@
 
     <?php
         require_once ('../admin/dao/hang-hoa.php');
-        $items = hang_hoa_select_all_cafe();
-    
+        $items = hang_hoa_select_all_thit();
     ?>
 
     <div class="container" style="margin-top: 50px;">
@@ -156,7 +131,7 @@
                     
                 ?>
                     <div class="item">
-                    <a href="chi-tiet-sp.php?ma_hh=<?=$ma_hh?>"><img style="width: 200px" src="../../bigshoes/css/admin/images/products/<?=$hinh?>" alt="ds"></a>
+                    <a href="chi-tiet-sp.php?ma_hh=<?=$ma_hh?>"><img src="../../bigshoes/css/admin/images/products/<?=$hinh?>" alt="ds"></a>
                     </div>
                 <?php }?>
 
@@ -167,7 +142,7 @@
     </div>
 
 
-    <div class="container-fluid now" style="margin-top: 90px;">
+    <!-- <div class="container-fluid now" style="margin-top: 90px;">
         <div class="row ">
             <div class="col-md-6">
                 <div class="jus">
@@ -190,55 +165,55 @@
 
 
         </div>
-    </div>
+    </div> -->
 
 
-    <div class="container now1">
-        <div class="row">
+        <!-- <div class="container now1">
+            <div class="row">
 
-            <div class="col-md-4">
-                <div class="pick">
-                    <ul>
-                        <li>
-                            <p><i class="fa fa-shopping-bag"></i></p>
-                        </li>
-                        <li>
-                            <p><span>Miễn phí</span> vận chuyển <br> cho các đơn hàng trên 2 trăm nghìn</p>
-                        </li>
-                    </ul>
+                <div class="col-md-4">
+                    <div class="pick">
+                        <ul>
+                            <li>
+                                <p><i class="fa fa-shopping-bag"></i></p>
+                            </li>
+                            <li>
+                                <p><span>Miễn phí</span> vận chuyển <br> cho các đơn hàng trên 2 trăm nghìn</p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
 
-            <div class="col-md-4">
-                <div class="pick">
-                    <ul>
-                        <li>
-                            <p>
-                                <i class="fa fa-heartbeat"></i>
-                            </p>
-                        </li>
-                        <li>
-                            <p><span>Nhiệt tình</span> Tư vấn <br> và hỗ trợ tận tình 24/7</p>
-                        </li>
-                    </ul>
+                <div class="col-md-4">
+                    <div class="pick">
+                        <ul>
+                            <li>
+                                <p>
+                                    <i class="fa fa-heartbeat"></i>
+                                </p>
+                            </li>
+                            <li>
+                                <p><span>Nhiệt tình</span> Tư vấn <br> và hỗ trợ tận tình 24/7</p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
 
-            <div class="col-md-4">
-                <div class="pick">
-                    <ul>
-                        <li>
-                            <p><i class="fa fa-gift"></i></p>
-                        </li>
-                        <li>
-                            <p><span>Chế độ</span> quà tặng hấp <br> dẫn cho mọi khách hàng</p>
-                        </li>
-                    </ul>
+                <div class="col-md-4">
+                    <div class="pick">
+                        <ul>
+                            <li>
+                                <p><i class="fa fa-gift"></i></p>
+                            </li>
+                            <li>
+                                <p><span>Chế độ</span> quà tặng hấp <br> dẫn cho mọi khách hàng</p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
 
-        </div>
-    </div>
+            </div>
+        </div> -->
 
 
 
@@ -247,14 +222,12 @@
             <div class="col-md-12">
                 <div class="caption">
                     <p>XEM NGAY NÀO ... </p>
-                    <h2> SẢN PHẨM <span>SALE OFF</span>
+                    <h2> SẢN PHẨM <span>ĐANG KHUYẾN MÃI</span>
                     </h2>
                 </div>
             </div>
         </div>
     </div>
-
-
 
 
     <div class="container" style="margin-top: 50px;">
@@ -269,7 +242,7 @@
                     extract($item);
                     ?>
                     <div class="item">
-                    <a href="chi-tiet-sp.php?ma_hh=<?=$ma_hh?>"><img style="width: 200px" src="../../bigshoes/css/admin/images/products/<?=$hinh?>" alt="ds"></a>
+                    <a href="chi-tiet-sp.php?ma_hh=<?=$ma_hh?>"><img  src="../../bigshoes/css/admin/images/products/<?=$hinh?>" alt="ds"></a>
                     </div>
                     <?php }?>
 
@@ -280,15 +253,12 @@
         </div>
     </div>
 
-
-
-
     <div class="container" style="margin-top: 100px;">
         <div class="row">
             <div class="col-md-12">
                 <div class="caption">
                     <p>XEM NGAY NÀO... </p>
-                    <h2>SẢN PHẨM <span>TRENDING</span>
+                    <h2>SẢN PHẨM <span>ĐANG HOT</span>
                     </h2>
                 </div>
             </div>
@@ -296,37 +266,38 @@
     </div>
 
                     <?php
-                        $items = hang_hoa_select_all_tratraicay();
+                        $items = hang_hoa_select_all_raucu();
                     ?>
 
-    <div class="container" style="margin-top: 30px;">
+<div class="container" style="margin-top: 50px;">
         <div class="row">
-            <?php foreach($items as $item){ 
-                extract($item);
-                ?>
-            <div class="col-md-3">
-                <div class="card">
-                    <a href="chi-tiet-sp.php?ma_hh=<?=$ma_hh?>"><img class="card-img-top" src="../../bigshoes/css/admin/images/products/<?=$hinh?>" alt="Card image top"></a>
-                    <div class="card-body">
-                        <h5 class="card-title"><?=$ten_hh?></h5>
-                        <p class="card-subtitle"><?=number_format($don_gia-($don_gia*$giam_gia/100)) ?> VNĐ</p>
+            <div class="col-md-12">
+                <div class="owl-carousel owl-theme ">
 
+                <?php 
+                    foreach($items as $item){
+                        extract($item);
+                    
+                ?>
+                    <div class="item">
+                    <a href="chi-tiet-sp.php?ma_hh=<?=$ma_hh?>"><img src="../../bigshoes/css/admin/images/products/<?=$hinh?>" alt="ds"></a>
                     </div>
+                <?php }?>
+
+
                 </div>
             </div>
-            <?php } ?>
-            
-
         </div>
-    </div>
 
-    <div class="container" style="margin-top: 20px;">
+
+
+    <!-- <div class="container" style="margin-top: 20px;">
         <div class="row">
             <div class="col-md-12">
                <a href="danh-sach-sp.php"><button type="button" class="btn btn-outline-dark">Tất cả</button></a>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
 
@@ -359,7 +330,7 @@
 
                                 <li>
                                     <p>
-                                        Nhiệm vụ của chúng tôi là mang đến những sản phẩm chất lượng với giá cả tốt nhất cho khách hàng.
+                                        Nhiệm vụ của chúng tôi là mang đến những loại thực phẩm chất lượng với giá cả tốt nhất cho khách hàng.
                 
                                         Được hỗ trợ khách hàng là niềm vinh dự của chúng tôi . <br><br>
                                         Xin cám ơn !
@@ -446,7 +417,8 @@
         const preIcon = ' <i class="fa fa-chevron-right" style="font-size:36px;color:black"></i>';
         $('.owl-carousel').owlCarousel({
             loop: true,
-            margin: 10,
+            padding:5,
+            margin: 20,
             responsiveClass: true,
             navText: [
                 nextIcon,
@@ -458,16 +430,19 @@
                     nav: true
                 },
                 600: {
-                    items: 3,
+                    items: 1,
                     nav: false
                 },
                 1200: {
                     items: 5,
                     nav: true,
-                    loop: false
+                    loop: true
                 }
             }
         })
+        $(document).ready(function () {
+            $('.dropdown-toggle').dropdown();
+        });
     </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

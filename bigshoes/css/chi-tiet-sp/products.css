@@ -285,3 +285,19 @@ html {
 .binh-luan ul li {
   list-style: none;
 }
+
+.gio-hang-mobile{
+  display: none;
+}
+
+@media only screen and (max-width: 768px){
+  .san-pham-chi-tiet{
+    padding: 0;
+  }
+  .gio-hang-web{
+    display: none;
+  }
+  .gio-hang-mobile{
+    display: block;
+  }
+}

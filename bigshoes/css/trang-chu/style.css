@@ -7,6 +7,8 @@ body {
   font-family: "Roboto Condensed", sans-serif;
 }
 
+
+
 .banner {
   width: 100%;
   height: 580px;
@@ -25,21 +27,31 @@ body {
 }
 
 .active {
-  color: #19d7f8 !important;
+  color: #19d7f8;
 }
 
+
 .nav ul li {
+  background-image: linear-gradient(#4d5069, #4d5069),
+  radial-gradient(circle at top left, #fd00da, #19d7f8);
+  border-radius: 20px;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  border: 1px solid transparent;
   float: left;
   margin-left: 20px;
   list-style: none;
   margin-top: 33px;
   font-family: "Roboto Condensed", sans-serif;
-  color: rgb(165, 164, 164);
+  color: white;
+  
 }
+
 .nav ul li a {
   text-decoration: none;
-  color: #a5a4a4;
+  padding:10px;
 }
+
 .sign {
   position: relative;
 }
@@ -48,13 +60,14 @@ body {
   position: absolute;
   top: 30px;
   text-decoration: none;
-  border: 2px solid transparent;
   border-radius: 20px;
   color: #fff;
   background-image: linear-gradient(#4d5069, #4d5069),
     radial-gradient(circle at top left, #fd00da, #19d7f8);
   background-origin: border-box;
   background-clip: content-box, border-box;
+  border: 2px solid transparent;
+  
 }
 
 .signup-btn span {
@@ -69,9 +82,15 @@ body {
 }
 
 .text .nho {
+  padding:5px;
+  border-radius:20px;
+  background-image: linear-gradient(#4d5069, #4d5069),
+    radial-gradient(circle at top left, #fd00da, #19d7f8);
+  color: white;
   font-family: "Roboto Condensed", sans-serif;
   font-size: 28px;
   font-weight: 800;
+  
 }
 
 .text .to {
@@ -98,6 +117,7 @@ body {
 
 #myVideo {
   position: fixed;
+  background: blue  ;
   right: 0;
   bottom: 0;
   min-width: 100%;
@@ -278,3 +298,53 @@ body {
   color: black;
 }
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
+
+
+.item{
+  width:100%;
+}
+
+.danh-muc-mobile{
+  display:none;
+}
+
+@media only screen and (max-width: 768px){
+  .text .nho {
+    display: none;
+  }
+
+  .nav{
+    display:none;
+  }
+
+  .sign{
+    position:fixed;
+    top:5px;
+    left:17%;
+  }
+
+  .signup-btn{
+    padding:3px 3px;
+    width:200px;
+    text-align:center;
+  }
+
+  .danh-muc-mobile{
+    display:block;
+    position:fixed;
+    top:-1%;
+    right:33%;
+  }
+
+  .likk{
+    position:fixed;
+    width:200px;
+    text-align:center;
+    padding: 3px 3px;
+    left:17%;
+    top:20%;
+  }
+
+
+  
+}

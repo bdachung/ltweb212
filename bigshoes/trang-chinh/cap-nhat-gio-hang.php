@@ -9,7 +9,4 @@
 
     }
   header('location: danh-sach-gio-hang.php');
-
-
-
 ?>

@@ -106,7 +106,7 @@
 
                             <!-- /. XỬ LÝ CODE PHP  -->
                             <?php
-                                require_once ('../../daO/thong-ke.php');
+                                require_once ('../../dao/thong-ke.php');
 
                                 $items = thong_ke_binh_luan();
                             ?>

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../bigshoes/css/danh-sach-sp/products.css">
     <link rel="stylesheet" href="../../bigshoes/css/chi-tiet-sp/products.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -13,6 +14,7 @@
     <link rel="stylesheet" href="../../bigshoes/css/chi-tiet-sp/plugin/css/owl.carousel.min.css">
     <link rel="stylesheet" href="../../bigshoes/css/chi-tiet-sp/plugin/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <title>Document</title>
 </head>
 
@@ -21,9 +23,9 @@
     <script type="text/javascript" src="../../bigshoes/css/chi-tiet-sp/plugin/js/owl.carousel.min.js"></script>
 
 
-    <div class="container-fluid">
+    <div class="container-fluid ">
         <div class="row">
-            <div class="col-md-4" style="background-color: rgb(54, 54, 54);text-align: center">
+            <div class="col-md-4 header-element">
                 <div class="login">
 
 
@@ -37,47 +39,56 @@
                   <a href="../../bigshoes/tai-khoan/thong-tin-tk.php"><p><strong>XIN CHÀO <?=$_SESSION['user']['ho_ten']?></strong></p></a>
                   <?php } ?>
                 </div>
-
-
-
             </div>
-            <div class="col-md-4" style="background-color: rgb(54, 54, 54);text-align: center">
+            <div class="col-md-4 header-element">
                 <div class="logo">
                 <a href="index.php"><img src="../css/trang-chu/img/logo11.png" alt="anh"></a>
                 </div>
             </div>
-            <div class="col-md-4" style="background-color: rgb(54, 54, 54);text-align: center">
+            <div class="col-md-4 header-element">
                 <!-- MÃ CODE PHP CHECK SỐ LƯỢNG SẢN PHẨM THÊM VÀO GIỎ HÀNG  -->
 
-                <div class="giohang" style = "position: reletive;">
-               
+                <div class="giohang" style = "position: relative;">
+                <ul style="list-style-type: none;">
+                        <!-- <li><p style="color: rgb(212, 212, 212);font-size: 14px;">GIỎ HÀNG</p></li> -->
+                    <a href="danh-sach-gio-hang.php"><li><i class="fa fa-shopping-basket" style="font-size:28px;color:rgb(255, 255, 255)"></i>
                     <?php
-                            $sll = 0;
-                            if(isset($_SESSION['cart'])){
-                                foreach($_SESSION['cart'] as $item){
-                                    extract($item);
-                                    $sll+= $sl;
-                                }
+                        $sll = 0;
+                        if(isset($_SESSION['cart'])){
+                            foreach($_SESSION['cart'] as $item){
+                                extract($item);
+                                $sll+= $sl;
                             }
-                        ?>
-                    <span style = "position: absolute;padding:3px 8px;background-color:#fff;border-radius:50px;left:295px;top:25px;" ><?=$sll?></span>
-                <ul>
-                        <li><i class="fa fa-search" style="font-size:20px;color:rgb(226, 226, 226)"></i></li>
-                        <li><p style="color: rgb(212, 212, 212);font-size: 14px;">GIỎ HÀNG</p></li>
-                       <a href="danh-sach-gio-hang.php"><li><i class="fa fa-shopping-basket" style="font-size:28px;color:rgb(255, 255, 255)"></i></li></a> 
-                    </ul>
+                        }
+                    ?>
+                    <span style = "position: relative;padding:3px 8px;background-color:#fff;border-radius:50px;left:1%;" ><?=$sll?></span></li></a> 
+                    
+                </ul>
                 </div>
             </div>
         </div>
     </div>
 
+    <div class="dropleft nav-mobile">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-expanded="false" style="background-color: #d7d6d6; color: black;">
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="index.php">TRANG CHỦ</a></li>
+            <li><a class="dropdown-item" href="danh-sach-sp.php">SẢN PHẨM</a></li>
+            <li><a class="dropdown-item" href="gioi-thieu.php">GIỚI THIỆU</a></li>
+            <li><a class="dropdown-item" href="tin-tuc.php">TIN TỨC</a></li>
+            <li><a class="dropdown-item" href="lien-he.php">LIÊN HỆ</a></li>
+            <?php
+                if(!isset($_SESSION['user'])){
+            ?>
+                <li><a href="../../bigshoes/tai-khoan/dang-nhap.php">THEO DÕI</a></li>
+            <?php }else{ ?>
+                <li><a class="dropdown-item" href="lichsu.php">THEO DÕI</a></li>
+            <?php } ?>
+        </ul>
+    </div>  
 
-
-
-
-
-
-    <div class="container-fluid">
+    <div class="container-fluid nav-web">
         <div class="row">
             <div class="col-md-12" style="background-color: rgb(211, 211, 211);">
                 <div class="nav">
@@ -112,23 +123,6 @@
                     <p><i class="fa fa-home" style="font-size:24px"></i> <span>TRANG CHỦ </span> / GIỎ HÀNG</p>
                 </div>
             </div>
-            <div class="col-md-5" style="padding-right: 0px;">
-                <div class="thutu">
-                    <ul>
-                        <li>
-                            <p style="margin-top: 10px;">Hiển thị tất cả các sản phẩm</p>
-                        </li>
-                        <li>
-                            <select>
-                               <option>Thứ tự mặc định</option>
-                               <option>Thứ tự theo mức độ phổ biến</option>
-                               <option>Thứ tự thấp đến cao</option>
-                           </select>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
         </div>
     </div>
     
@@ -136,51 +130,99 @@
         <div class="row">
         
         <div class="col-sm-7">
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>SẢN PHẨM</th>
-                    <th>HÌNH ẢNH</th>
-                    <th>GIÁ</th>
-                    <th>SL</th>
-                    <th>TỔNG</th>
-                    <th></th>
-                </tr>
-                </thead>
-                <tbody>
-                <!-- CODE PHP DANH SÁCH GIỎ HÀNG -->
+            <div class="container-fluid gio-hang-mobile">
                 <form action="cap-nhat-gio-hang.php" method="post">
-                <?php
-                    $total = $i = 0;
-                    if(!empty($_SESSION['cart'])){
-                        $items = $_SESSION['cart'];
-                        foreach($items as $item){
-                            extract($item);
-                            $i++;
+                    <?php
+                        $total = $i = 0;
+                        if(!empty($_SESSION['cart'])){
+                            $items = $_SESSION['cart'];
+                            foreach($items as $item){
+                                extract($item);
+                                $i++;
                     ?>
-                <tr>
-               
-                    <td><?=$name ?></td>
-                    <td><img src="../../bigshoes/css/admin/images/products/<?=$hinh?>" alt="" style = "width:80px;"></td>
-                    <td><?=number_format($price - ($price*($giam_gia/100))) ?> VNĐ</td>
-                    <td><input class="form-control" type="number" name='sl[<?=$ma_hh?>]' value="<?=$sl ?>" style="width:60px;" min="1" max="100"></td>
-                    <td><?=number_format(($price - ($price*($giam_gia/100)))*$sl);
-                            $total += (($price - ($price*($giam_gia/100)))*$sl);
-                    ?> VNĐ</td>
-                    <td><a onclick="return confirm('Bạn muốn bỏ sản phẩm này khỏi giỏ hàng ?')" style = "color:black;" href="xoa-gio-hang.php?ma_hh=<?=$ma_hh?>"><i class="fa fa-times-circle" aria-hidden="true"></i></a></td>
-                </tr>
+                    <div class="row">
+                        <div class="col-4">
+                            <div>
+                                <img src="../../bigshoes/css/admin/images/products/<?=$hinh?>" alt="" style = "width:80px;">
+                            </div>
 
-                <!-- NẾU KHÔNG CÓ SẢN PHẨM NÀO SẼ XUẤT HIỆN THẺ P -->
-                        <?php }}else{
+                            <div style="text-align:center;">
+                                <a onclick="return confirm('Bạn muốn bỏ sản phẩm này khỏi giỏ hàng ?')" style = "color:black;" href="xoa-gio-hang.php?ma_hh=<?=$ma_hh?>"><i class="fa fa-times-circle" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-8">
+                            <h6>
+                                <?php echo $name; ?>
+                            </h6>
+                            <h6>
+                                <?php echo number_format($price - ($price*($giam_gia/100)))."VNĐ";?>
+                            </h6>
+                            <div>
+                                <input style="text-align: center;" type="number" name='sl[<?=$ma_hh?>]' value="<?=$sl ?>" style="width:60px;" min="1" max="100">
+                                <span>
+                                    = <?php echo number_format(($price - ($price*($giam_gia/100)))*$sl)."VNĐ";
+                                            $total += (($price - ($price*($giam_gia/100)))*$sl); ?>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- NẾU KHÔNG CÓ SẢN PHẨM NÀO SẼ XUẤT HIỆN THẺ P -->
+                    <?php }}else{
                         echo '<p>Giỏ hàng của bạn chưa có sản phẩm nào !</p>';
-                        }?>
-                        
-                </tbody>
-            </table>
-            <button class = "btn btn-info"><a style = "color:#fff;text-decoration:none;" href="danh-sach-sp.php">Tiếp tục xem sản phẩm</a></button>  
-            <button type="submit" class = "btn btn-secondary" name="btn_update_gio_hang" >Cập nhật giỏ hàng</button>
+                    }?>
+                    <button class = "btn btn-info" style="margin-top:20px;"><a style="color:#fff;text-decoration:none;" href="danh-sach-sp.php">Tiếp tục xem sản phẩm</a></button>  
+                    <button type="submit" class = "btn btn-secondary" name="btn_update_gio_hang" style="margin-top:10px;margin-bottom:10px">Cập nhật giỏ hàng</button>
+                </form>
+            </div>
 
-            </form>
+
+            <div class="gio-hang-web">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>SẢN PHẨM</th>
+                        <th>HÌNH ẢNH</th>
+                        <th>GIÁ</th>
+                        <th>SL</th>
+                        <th>TỔNG</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- CODE PHP DANH SÁCH GIỎ HÀNG -->
+                    <form action="cap-nhat-gio-hang.php" method="post">
+                    <?php
+                        $total = $i = 0;
+                        if(!empty($_SESSION['cart'])){
+                            $items = $_SESSION['cart'];
+                            foreach($items as $item){
+                                extract($item);
+                                $i++;
+                    ?>
+                    <tr>
+                
+                        <td><?=$name ?></td>
+                        <td><img src="../../bigshoes/css/admin/images/products/<?=$hinh?>" alt="" style = "width:80px;"></td>
+                        <td><?=number_format($price - ($price*($giam_gia/100))) ?> VNĐ</td>
+                        <td><input class="form-control" type="number" name='sl[<?=$ma_hh?>]' value="<?=$sl ?>" style="width:60px;" min="1" max="100"></td>
+                        <td><?=number_format(($price - ($price*($giam_gia/100)))*$sl);
+                                $total += (($price - ($price*($giam_gia/100)))*$sl);
+                        ?> VNĐ</td>
+                        <td><a onclick="return confirm('Bạn muốn bỏ sản phẩm này khỏi giỏ hàng ?')" style = "color:black;" href="xoa-gio-hang.php?ma_hh=<?=$ma_hh?>"><i class="fa fa-times-circle" aria-hidden="true"></i></a></td>
+                    </tr>
+
+                    <!-- NẾU KHÔNG CÓ SẢN PHẨM NÀO SẼ XUẤT HIỆN THẺ P -->
+                            <?php }}else{
+                            echo '<p>Giỏ hàng của bạn chưa có sản phẩm nào !</p>';
+                            }?>
+                            
+                    </tbody>
+                </table>
+                    <button class = "btn btn-info"><a style = "color:#fff;text-decoration:none;" href="danh-sach-sp.php">Tiếp tục xem sản phẩm</a></button>  
+                    <button type="submit" class = "btn btn-secondary" name="btn_update_gio_hang" >Cập nhật giỏ hàng</button>
+                </form>
+            </div>
         </div>
 
 
@@ -204,8 +246,7 @@
                 <tr>
                     <td>Giao hàng</td>
                     <td style = "text-align:right;">Giao hàng miễn phí <br>
-                    Ước tính tại nội thành Hồ Chí Minh <br>
-                    Đổi địa chỉ</td>
+                    Ước tính tại nội thành Hồ Chí Minh</td>
                 </tr>
                 <tr>
                     <td>Tổng</td>
@@ -221,15 +262,6 @@
                                     <td colspan="2"><a href="thanh-toan-gio-hang.php"><button class = "btn btn-danger" style = "width:100%;">TIẾN HÀNH THANH TOÁN</button></a></td>
                                 <?php } ?>
 
-                </tr>
-                <tr>
-                    <td colspan = "2"><b>Phiếu ưu đãi</b></td>
-                </tr>
-                <tr>
-                    <td colspan = "2">
-                    <input type="text" class="form-control" placeholder="Mã ưu đãi"><br>
-                    <button class = "btn btn-light" style = "width:100%;"><b>ÁP DỤNG</b></button>
-                    </td>
                 </tr>
                 </tbody>
             </table>
@@ -385,6 +417,9 @@
                 }
             }
         })
+        $(document).ready(function () {
+            $('.dropdown-toggle').dropdown();
+        });
     </script>
 
 

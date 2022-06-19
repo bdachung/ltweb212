@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../bigshoes/css/danh-sach-sp/products.css">
     <link rel="stylesheet" href="../../bigshoes/css/chi-tiet-sp/products.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -32,9 +33,8 @@
             background: linear-gradient(#f7941d 0,#f7941d 100%);
             box-shadow: 0 3px 10px -5px #000;
             top: 10px;
-            right: 25px;
+            right: 18px;
         }
-        
     </style>
 </head>
 
@@ -43,9 +43,9 @@
     <script type="text/javascript" src="../../bigshoes/css/chi-tiet-sp/plugin/js/owl.carousel.min.js"></script>
 
 
-    <div class="container-fluid">
+    <div class="container-fluid ">
         <div class="row">
-            <div class="col-md-4" style="background-color: rgb(54, 54, 54);text-align: center">
+            <div class="col-md-4 header-element">
                 <div class="login">
 
 
@@ -56,54 +56,55 @@
                   ?>
                   <a href="../../bigshoes/tai-khoan/dang-nhap.php"><p><strong>ĐĂNG NHẬP / ĐĂNG KÍ</strong></p></a> 
                     <?php }else{ ?>
-                        <a href="../../bigshoes/tai-khoan/thong-tin-tk.php"><p><strong>XIN CHÀO <?=$_SESSION['user']['ho_ten']?></strong></p></a>
+                  <a href="../../bigshoes/tai-khoan/thong-tin-tk.php"><p><strong>XIN CHÀO <?=$_SESSION['user']['ho_ten']?></strong></p></a>
                   <?php } ?>
                 </div>
 
 
 
             </div>
-            <div class="col-md-4" style="background-color: rgb(54, 54, 54);text-align: center">
+            <div class="col-md-4 header-element">
                 <div class="logo">
                 <a href="index.php"><img src="../css/trang-chu/img/logo11.png" alt="anh"></a>
                 </div>
             </div>
-            <div class="col-md-4" style="background-color: rgb(54, 54, 54);text-align: center">
+            <div class="col-md-4 header-element">
                 <!-- MÃ CODE PHP CHECK SỐ LƯỢNG SẢN PHẨM THÊM VÀO GIỎ HÀNG  -->
 
-                <div class="giohang" style = "position: reletive;">
-               
+                <div class="giohang" style = "position: relative;">
+                <ul style="list-style-type: none;">
+                        <!-- <li><p style="color: rgb(212, 212, 212);font-size: 14px;">GIỎ HÀNG</p></li> -->
+                    <a href="danh-sach-gio-hang.php"><li><i class="fa fa-shopping-basket" style="font-size:28px;color:rgb(255, 255, 255)"></i>
                     <?php
-                            $sll = 0;
-                            if(isset($_SESSION['cart'])){
-                                foreach($_SESSION['cart'] as $item){
-                                    extract($item);
-                                    $sll+= $sl;
-                                }
+                        $sll = 0;
+                        if(isset($_SESSION['cart'])){
+                            foreach($_SESSION['cart'] as $item){
+                                extract($item);
+                                $sll+= $sl;
                             }
-                        ?>
-                    <span style = "position: absolute;padding:3px 8px;background-color:#fff;border-radius:50px;left:295px;top:25px;" ><?=$sll?></span>
-                
-
-
-
-                <ul>
-                        <li><i class="fa fa-search" style="font-size:20px;color:rgb(226, 226, 226)"></i></li>
-                        <li><p style="color: rgb(212, 212, 212);font-size: 14px;">GIỎ HÀNG</p></li>
-                       <a href="danh-sach-gio-hang.php"><li><i class="fa fa-shopping-basket" style="font-size:28px;color:rgb(255, 255, 255)"></i></li></a> 
-                    </ul>
+                        }
+                    ?>
+                    <span style = "position: relative;padding:3px 8px;background-color:#fff;border-radius:50px;left:1%;" ><?=$sll?></span></li></a> 
+                    
+                </ul>
                 </div>
             </div>
         </div>
     </div>
 
+    <div class="dropleft nav-mobile">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-expanded="false" style="background-color: #d7d6d6; color: black;">
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="index.php">TRANG CHỦ</a></li>
+            <li><a class="dropdown-item" href="danh-sach-sp.php">SẢN PHẨM</a></li>
+            <li><a class="dropdown-item" href="gioi-thieu.php">GIỚI THIỆU</a></li>
+            <li><a class="dropdown-item" href="tin-tuc.php">TIN TỨC</a></li>
+            <li><a class="dropdown-item" href="lien-he.php">LIÊN HỆ</a></li>
+        </ul>
+    </div>  
 
-
-
-
-
-
-    <div class="container-fluid">
+    <div class="container-fluid nav-web">
         <div class="row">
             <div class="col-md-12" style="background-color: rgb(211, 211, 211);">
                 <div class="nav">
@@ -130,23 +131,6 @@
                     <p><i class="fa fa-home" style="font-size:24px"></i> <span>TRANG CHỦ </span> / CHI TIẾT</p>
                 </div>
             </div>
-            <div class="col-md-5" style="padding-right: 0px;">
-                <div class="thutu">
-                    <ul>
-                        <li>
-                            <p style="margin-top: 10px;">Hiển thị tất cả các sản phẩm</p>
-                        </li>
-                        <li>
-                            <select>
-                               <option>Thứ tự mặc định</option>
-                               <option>Thứ tự theo mức độ phổ biến</option>
-                               <option>Thứ tự thấp đến cao</option>
-                           </select>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
         </div>
     </div>
 
@@ -163,7 +147,7 @@
                         $items = hang_hoa_select_by_id($ma_hh);
                         extract($items);
                     ?>
-            <div class="col-md-4" style="padding-left: 0px">
+            <div class="col-md-4 san-pham-chi-tiet" style="padding-left: 0px">
                 <div class="spchitiet">
                     <img src="../../bigshoes/css/admin/images/products/<?=$hinh?>" alt="" style="width:100%;">
                 </div>
@@ -210,22 +194,6 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="thanhtoan">
-                   <div class="row">
-                   <h5>PHƯƠNG THỨC THANH TOÁN</h5>
-                    <ul>
-                        <li> <img src="../../bigshoes/css/chi-tiet-sp/img/l2.png" alt=""> </li>
-                        <li> <img src="../../bigshoes/css/chi-tiet-sp/img/l1.png" alt=""> </li><br>
-                        <li> <img src="../../bigshoes/css/chi-tiet-sp/img/l4.png" alt=""> </li>
-                        <li> <img src="../../bigshoes/css/chi-tiet-sp/img/l3.png" alt=""> </li>
-                    </ul>
-                   </div>
-                   <div class="row">
-                     <a href="danh-sach-sp.php"><img src="../../bigshoes/css/chi-tiet-sp/img/SALE.png" alt="" style="width:100%"></a>  
-                   </div>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -257,21 +225,23 @@
                 }
                 $binh_luan_list = binh_luan_select_by_hang_hoa($ma_hh);
             ?>  
-            <div class="binh-luan">
+            <div id="owl-two" class="binh-luan owl-carousel owl-theme">
 
             <?php
             foreach ($binh_luan_list as $bl) {
             ?>
-               <div class="row">
-                    <div class="col-sm-10">
+               <div>
+                    <div class="col-sm-6">
                         <?php echo "<li>$bl[noi_dung]</li>"?>
                     </div>
-                    <div class="col-sm-2" style = "text-align:right;">
-                       <?php echo "$bl[ma_kh]</b>, $bl[ngay_bl]" ?>
+                    <div class="col-sm-6" style = "text-align:right;">
+                        <?php echo "$bl[ma_kh]</b>, $bl[ngay_bl]" ?>
                     </div>
                </div>
             <?php } ?>
-            </div><br>
+            </div>
+            
+            <br>
             
             <!-- CODE PHP PHẦN CHO PHÉP BÌNH LUẬN -->
                 <?php
@@ -279,16 +249,16 @@
                     echo '<b class="text-danger">Đăng nhập để bình luận về sản phẩm này</b>';
                 }else{
                 ?>
-                <div class="owl-carousel owl-theme ">
+                <div>
                    <form action="" method="post">
-                   <div class="row">
+                   <div class="row" style="align-items:center;">
                        <div class="col-sm-10">
-                            <div class="form-group">
-                            <input class="form-control" name= "noi_dung"  style="width:600%;height:80px;"/>
+                            <div class="form-group" style="margin: 0;">
+                            <textarea class="form-control" name= "noi_dung" required></textarea>
                             </div>
                        </div>
                        <div class="col-sm-2">
-                           <button class="btn btn-danger" style = "margin-left:870px;">Gửi</button>
+                           <button class="btn btn-danger" style = "">Gửi</button>
                        </div>
                    </div>
                    </form>
@@ -311,7 +281,7 @@
                     <p></p>
                 </div>
 
-                <div class="owl-carousel owl-theme ">
+                <div id="owl-one" class="owl-carousel owl-theme">
                     <!-- CODE PHP SẢN PHẨM CÙNG LOẠI -->
                     <?php
                         $items = hang_hoa_select_by_loai($ma_loai);
@@ -320,7 +290,7 @@
                         
                     ?>
                     <div class="item">
-                       <a href="chi-tiet-sp.php?ma_hh=<?=$ma_hh?>"><img style="width: 200px" src="../../bigshoes/css/admin/images/products/<?=$hinh?>" alt="ds"><span class='cung-loai'><?=$ten_loai?></span></a>
+                       <a href="chi-tiet-sp.php?ma_hh=<?=$ma_hh?>"><img src="../../bigshoes/css/admin/images/products/<?=$hinh?>" alt="ds"><span class='cung-loai'><?=$ten_loai?></span></a>
                     </div>
                         <?php } ?>
                 </div>
@@ -435,19 +405,10 @@
         </div>
     </div>
 
-
-
-
-
-
-
-
-
     <script type="text/javascript">
         const nextIcon = ' <i class="fa fa-chevron-left" style="font-size:36px;color:black"></i>';
         const preIcon = ' <i class="fa fa-chevron-right" style="font-size:36px;color:black"></i>';
-        $('.owl-carousel').owlCarousel({
-            loop: true,
+        $('#owl-one').owlCarousel({
             margin: 10,
             responsiveClass: true,
             navText: [
@@ -456,38 +417,42 @@
             ],
             responsive: {
                 0: {
-                    items: 1,
-                    nav: true
+                    items: 2,
+                    nav: false  
                 },
-                600: {
-                    items: 3,
+                768: {
+                    items: 2,
                     nav: false
                 },
-                1200: {
+                1200:{
                     items: 5,
-                    nav: true,
-                    loop: false
+                    nav: false
                 }
             }
-        })
+        });
+        $('#owl-two').owlCarousel({
+            margin: 10,
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: false  
+                },
+                768: {
+                    items: 1,
+                    nav: false
+                },
+                1200:{
+                    items: 2,
+                    nav: false
+                }
+            }
+        });
     </script>
-
-
-
 
     <script src=" https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
-
-
-
-
-
-
-
-
-
-
 
 </body>
 

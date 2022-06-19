@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../bigshoes/css/chi-tiet-sp/products.css">
-    <link rel="stylesheet" href="../../bigshoes/css/tin-tuc/tintuc.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
@@ -14,6 +12,8 @@
     <link rel="stylesheet" href="../../bigshoes/css/chi-tiet-sp/plugin/css/owl.carousel.min.css">
     <link rel="stylesheet" href="../../bigshoes/css/chi-tiet-sp/plugin/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../bigshoes/css/chi-tiet-sp/products.css">
+    <link rel="stylesheet" href="../../bigshoes/css/tin-tuc/tintuc.css">
     <title>Document</title>
 </head>
 
@@ -22,9 +22,9 @@
     <script type="text/javascript" src="../../bigshoes/css/chi-tiet-sp/plugin/js/owl.carousel.min.js"></script>
 
 
-    <div class="container-fluid">
+    <div class="container-fluid ">
         <div class="row">
-            <div class="col-md-4" style="background-color: rgb(54, 54, 54);text-align: center">
+            <div class="col-md-4 header-element">
                 <div class="login">
 
 
@@ -42,52 +42,71 @@
 
 
             </div>
-            <div class="col-md-4" style="background-color: rgb(54, 54, 54);text-align: center">
+            <div class="col-md-4 header-element">
                 <div class="logo">
                 <a href="index.php"><img src="../css/trang-chu/img/logo11.png" alt="anh"></a>
                 </div>
             </div>
-            <div class="col-md-4" style="background-color: rgb(54, 54, 54);text-align: center">
+            <div class="col-md-4 header-element">
                 <!-- MÃ CODE PHP CHECK SỐ LƯỢNG SẢN PHẨM THÊM VÀO GIỎ HÀNG  -->
 
-                <div class="giohang" style = "position: reletive;">
-               
+                <div class="giohang" style = "position: relative;">
+                <ul style="list-style-type: none;">
+                        <!-- <li><p style="color: rgb(212, 212, 212);font-size: 14px;">GIỎ HÀNG</p></li> -->
+                    <a href="danh-sach-gio-hang.php"><li><i class="fa fa-shopping-basket" style="font-size:28px;color:rgb(255, 255, 255)"></i>
                     <?php
-                            $sll = 0;
-                            if(isset($_SESSION['cart'])){
-                                foreach($_SESSION['cart'] as $item){
-                                    extract($item);
-                                    $sll+= $sl;
-                                }
+                        $sll = 0;
+                        if(isset($_SESSION['cart'])){
+                            foreach($_SESSION['cart'] as $item){
+                                extract($item);
+                                $sll+= $sl;
                             }
-                        ?>
-                    <span style = "position: absolute;padding:3px 8px;background-color:#fff;border-radius:50px;left:295px;top:25px;" ><?=$sll?></span>
-                <ul>
-                        <li><i class="fa fa-search" style="font-size:20px;color:rgb(226, 226, 226)"></i></li>
-                        <li><p style="color: rgb(212, 212, 212);font-size: 14px;">GIỎ HÀNG</p></li>
-                       <a href="danh-sach-gio-hang.php"><li><i class="fa fa-shopping-basket" style="font-size:28px;color:rgb(255, 255, 255)"></i></li></a> 
-                    </ul>
+                        }
+                    ?>
+                    <span style = "position: relative;padding:3px 8px;background-color:#fff;border-radius:50px;left:1%;" ><?=$sll?></span></li></a> 
+                    
+                </ul>
                 </div>
             </div>
         </div>
     </div>
 
+    <div class="dropleft nav-mobile">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-expanded="false" style="background-color: #d7d6d6; color: black;">
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="index.php">TRANG CHỦ</a></li>
+            <li><a class="dropdown-item" href="danh-sach-sp.php">SẢN PHẨM</a></li>
+            <li><a class="dropdown-item" href="gioi-thieu.php">GIỚI THIỆU</a></li>
+            <li><a class="dropdown-item" href="tin-tuc.php">TIN TỨC</a></li>
+            <li><a class="dropdown-item" href="lien-he.php">LIÊN HỆ</a></li>
+        </ul>
+    </div>   
+
+    <div class="dropleft nav-mobile">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-expanded="false" style="background-color: #d7d6d6; color: black;">
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="index.php">TRANG CHỦ</a></li>
+            <li><a class="dropdown-item" href="danh-sach-sp.php">SẢN PHẨM</a></li>
+            <li><a class="dropdown-item" href="gioi-thieu.php">GIỚI THIỆU</a></li>
+            <li><a class="dropdown-item" href="tin-tuc.php">TIN TỨC</a></li>
+            <li><a class="dropdown-item" href="lien-he.php">LIÊN HỆ</a></li>
+        </ul>
+    </div>                    
 
 
 
-
-
-
-    <div class="container-fluid">
+    <div class="container-fluid nav-web">
         <div class="row">
             <div class="col-md-12" style="background-color: rgb(211, 211, 211);">
                 <div class="nav">
                     <ul>
                         <li><a href="index.php">TRANG CHỦ</a></li>
                         <li><a href="danh-sach-sp.php">SẢN PHẨM</a></li>
-                            <li><a href="gioi-thieu.php">GIỚI THIỆU</a></li>
-                            <li><a href="tin-tuc.php">TIN TỨC</a></li>
-                            <li><a href="lien-he.php">LIÊN HỆ</a></li>
+                        <li><a href="gioi-thieu.php">GIỚI THIỆU</a></li>
+                        <li><a href="tin-tuc.php">TIN TỨC</a></li>
+                        <li><a href="lien-he.php">LIÊN HỆ</a></li>
                     </ul>
                 </div>
             </div>
@@ -98,10 +117,10 @@
 
     <div class="container" style="margin-top: 50px;">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 latest-news">
                 <!-- ---------------------
                 --------------------------- -->
-                <div class="row">
+                <div class="row search-bar">
                     <div class="serch">
                         <input type="text" placeholder="Tìm kiếm...">
                         <button><i class="fa fa-search"></i></button>
@@ -115,10 +134,7 @@
                     <div class="baiviet">
                         <h5>BÀI VIẾT MỚI</h5>
                     </div>
-                </div>
-
-
-                <div class="row">
+                    <div class="row">
                     <div class="out">
 
                         <table>
@@ -127,7 +143,7 @@
                                     <img src="../../bigshoes/css/tin-tuc/img/tt1.jpg" alt="">
                                 </td>
                                 <td>
-                                    <p>Ngày 15/01/2021, STAFF Coffee House chính thức ra mắt phiên bản App mới với mong muốn tối ưu trải nghiệm </p>
+                                    <p>GROCERY HOUSE ... </p>
                                 </td>
                             </tr>
                             <tr>
@@ -135,7 +151,7 @@
                                     <img src="../../bigshoes/css/tin-tuc/img/tt2.jpg" alt="">
                                 </td>
                                 <td>
-                                    <p>Ngày 15/01/2021, STAFF Coffee House chính thức ra mắt phiên bản App mới với mong muốn tối ưu trải nghiệm</p>
+                                    <p>GROCERY HOUSE ...</p>
                                 </td>
                             </tr>
                             <tr>
@@ -143,7 +159,7 @@
                                     <img src="../../bigshoes/css/tin-tuc/img/tt3.jpg" alt="">
                                 </td>
                                 <td>
-                                    <p>Ngày 15/01/2021, STAFF Coffee House chính thức ra mắt phiên bản App mới với mong muốn tối ưu trải nghiệm </p>
+                                    <p>GROCERY HOUSE ... </p>
                                 </td>
                             </tr>
                             <tr>
@@ -151,7 +167,7 @@
                                     <img src="../../bigshoes/css/tin-tuc/img/tt4.jpg" alt="">
                                 </td>
                                 <td>
-                                    <p>Ngày 15/01/2021, STAFF Coffee House chính thức ra mắt phiên bản App mới với mong muốn tối ưu trải nghiệm </p>
+                                    <p>GROCERY HOUSE ... </p>
                                 </td>
                             </tr>
                             <tr>
@@ -159,27 +175,28 @@
                                     <img src="../../bigshoes/css/tin-tuc/img/tt5.jpg" alt="">
                                 </td>
                                 <td>
-                                    <p>Ngày 15/01/2021, STAFF Coffee House chính thức ra mắt phiên bản App mới với mong muốn tối ưu trải nghiệm </p>
+                                    <p>GROCERY HOUSE ... </p>
                                 </td>
                             </tr>
 
 
                         </table>
-
-
-
                     </div>
                 </div>
+                </div>
+
+
+                
 
             </div>
 
 
             <div class="col-md-8">
-                <div class="row">
+                <div class="row content">
 
 
 
-                    <div class="card" style="width: 14rem;">
+                    <div class="card" >
                         <img src="../../bigshoes/css/tin-tuc/img/tt1.jpg" class="card-img-top" alt="...">
                         <div class="card-body" style="
                         padding-top: 0px;
@@ -189,15 +206,15 @@
                     ">
 
 
-                            <p class="card-text">DEAL SIÊU YÊU - CHIỀU BẠN HẾT MỨC</p>
+                            <p class="card-text">Siêu khuyến mãi - up to 30%</p>
                             <p class="gach"></p>
-                            <p class="nho">Ngày 15/01/2021, STAFF Coffee House chính thức ra mắt phiên bản App mới với mong muốn tối ưu trải nghiệm ...</p>
+                            <p class="nho">Ngày 15/06/2022, GROCERYY HOUSE ...</p>
                             <p class="ngay"> <img src="../../bigshoes/css/tin-tuc/img/h.png" alt=""> </p>
 
                         </div>
                     </div>
 
-                    <div class="card" style="width: 14rem;">
+                    <div class="card" >
                         <img src="../../bigshoes/css/tin-tuc/img/tt6.jpg" class="card-img-top" alt="...">
                         <div class="card-body" style="
                         padding-top: 0px;
@@ -207,15 +224,15 @@
                     ">
 
 
-                            <p class="card-text">CHAI FRESH: LỜI YÊU DÀNH TẶNG NGƯỜI PHỤ NỮ</p>
+                            <p class="card-text">Fresh day: Giảm 5% nếu mua bằng túi vải</p>
                             <p class="gach"></p>
-                            <p class="nho">Ngày 15/01/2021, STAFF Coffee House chính thức ra mắt phiên bản App mới với mong muốn tối ưu trải nghiệm ...</p>
+                            <p class="nho">Ngày 15/06/2022, GROCERY HOUSE ...</p>
                             <p class="ngay"> <img src="../../bigshoes/css/tin-tuc/img/h.png" alt=""> </p>
 
                         </div>
                     </div>
 
-                    <div class="card" style="width: 14rem;">
+                    <div class="card" >
                         <img src="../../bigshoes/css/tin-tuc/img/tt7.png" class="card-img-top" alt="...">
                         <div class="card-body" style="
                         padding-top: 0px;
@@ -225,15 +242,15 @@
                     ">
 
 
-                            <p class="card-text">SIÊU PHẨM CHAI FRESH SẮP TRỞ LẠI – HỨA HẸN NHIỀU BẤT NGỜ...</p>
+                            <p class="card-text">King Vegetable: Loại rau đang khuấy đảo thế giới</p>
                             <p class="gach"></p>
-                            <p class="nho">Ngày 15/01/2021, STAFF Coffee House chính thức ra mắt phiên bản App mới với mong muốn tối ưu trải nghiệm ...</p>
+                            <p class="nho">Ngày 16/05/2022, GROCERY HOUSE ...</p>
                             <p class="ngay"> <img src="../../bigshoes/css/tin-tuc/img/h.png" alt=""> </p>
 
                         </div>
                     </div>
 
-                    <div class="card" style="width: 14rem;">
+                    <div class="card" >
                         <img src="../../bigshoes/css/tin-tuc/img/tt8.jpg" class="card-img-top" alt="...">
                         <div class="card-body" style="
                         padding-top: 0px;
@@ -243,15 +260,15 @@
                     ">
 
 
-                            <p class="card-text">TÁI SỬ DỤNG CHAI FRESH – CÙNG THE COFFEE HOUSE LAN TỎA LỐI SỐNG XANH</p>
+                            <p class="card-text">Cặp đôi mua hàng, càng mua càng thêm vui</p>
                             <p class="gach"></p>
-                            <p class="nho">Ngày 15/01/2021, STAFF Coffee House chính thức ra mắt phiên bản App mới với mong muốn tối ưu trải nghiệm ...</p>
+                            <p class="nho">Ngày 16/05/2022, GROCERY HOUSE ...</p>
                             <p class="ngay"> <img src="../../bigshoes/css/tin-tuc/img/h.png" alt=""> </p>
 
                         </div>
                     </div>
 
-                    <div class="card" style="width: 14rem;">
+                    <div class="card" >
                         <img src="../../bigshoes/css/tin-tuc/img/tt2.jpg" class="card-img-top" alt="...">
                         <div class="card-body" style="
                         padding-top: 0px;
@@ -261,15 +278,15 @@
                     ">
 
 
-                            <p class="card-text">RỘN RÀNG GỌI MÓN, NHÀ & MOMO MỜI DEAL XỊN SÒ</p>
+                            <p class="card-text">Mố mồ, mố mồ, ting ting giảm giá</p>
                             <p class="gach"></p>
-                            <p class="nho">Ngày 15/01/2021, STAFF Coffee House chính thức ra mắt phiên bản App mới với mong muốn tối ưu trải nghiệm ...</p>
+                            <p class="nho">Ngày 16/05/2022, GROCERY HOUSE ...</p>
                             <p class="ngay"> <img src="../../bigshoes/css/tin-tuc/img/h.png" alt=""> </p>
 
                         </div>
                     </div>
 
-                    <div class="card" style="width: 14rem;">
+                    <div class="card" >
                         <img src="../../bigshoes/css/tin-tuc/img/tt3.jpg" class="card-img-top" alt="...">
                         <div class="card-body" style="
                         padding-top: 0px;
@@ -279,9 +296,9 @@
                     ">
 
 
-                            <p class="card-text">GU ĐẬM ĐÀ - DEAL ĐẬM CHẤT CHO NGÀY MỚI NĂNG LƯỢNG</p>
+                            <p class="card-text">King Beef, ăn không ngon đời không nể</p>
                             <p class="gach"></p>
-                            <p class="nho">Ngày 15/01/2021, STAFF Coffee House chính thức ra mắt phiên bản App mới với mong muốn tối ưu trải nghiệm ...</p>
+                            <p class="nho">Ngày 16/05/2022, GROCERY HOUSE ...</p>
                             <p class="ngay"> <img src="../../bigshoes/css/tin-tuc/img/h.png" alt=""> </p>
 
                         </div>

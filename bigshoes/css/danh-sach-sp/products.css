@@ -232,3 +232,142 @@
   background-color: rgb(243, 243, 243);
   position: relative;
 }
+
+.item .noi-bat{
+  position: absolute;
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+  font-weight: 400;
+  line-height: 26px;
+  transform: rotate(45deg);
+  font-family: "Roboto Condensed", sans-serif;
+  width: 50px;
+  display: block;
+  background: #f7941d;
+  background: linear-gradient(#f7941d 0,#f7941d 100%);
+  box-shadow: 0 3px 10px -5px #000;
+  top: 15px;
+  right: 20px;
+}  
+
+.content{
+  padding-left: 0px;
+  margin-top: 42px;
+}
+
+.sale-up-content a img{
+  width: 80px;
+}
+
+.danh-muc-mobile{
+  display: none;
+}
+
+.header-element{
+  background-color: rgb(54, 54, 54);
+  text-align: center;
+}
+
+.nav-mobile{
+  display: none;
+}
+
+@media only screen and (max-width: 768px){
+  .sanpham{
+    width: 48%;
+    margin: 3px;
+    border: 1px solid #dfdfdfff;
+    box-shadow: 1px 1px;
+  }
+
+  .content {
+    width: 100%;
+    padding: 0;
+  }
+
+  .content *{
+    width: 100%;
+    margin: 0;
+    display: block;
+  }
+
+  .sale-up-header{
+    text-align: center;
+  }
+
+  .sale-up-content{
+    width: 48.8%;
+    height: 50%;
+    display: inline-block;
+    padding: 0;
+    text-align: center;
+    margin-top: 5px;
+    border: 1px solid #dfdfdfff;
+    box-shadow: 1px 1px;
+  }
+
+  .sale-up-content a{
+    width: 100%;
+    text-align: center;
+  }
+
+  .sale-up-content a img
+  {
+    width: 100%;
+  }
+
+  .san-pham-content{
+    padding: 0;
+  }
+  
+  .noi-bat{
+    left: 70%;
+  }
+
+  .serch input{
+    width: 80%;
+  }
+  
+  .serch button{
+    width: 20%;
+    height: 100%;
+  }
+
+  .danh-muc-mobile{
+    display: flex;
+    margin-left: 10px;
+    background-color: black;
+  }
+
+  .danh-muc-web{
+    display: none;
+  }
+  
+  .san-pham-chi-tiet{
+    padding: 0;
+  }
+
+  .search-bar{
+    text-align: center;
+    justify-content: center;
+  }
+
+  .logo{
+    display: none;
+  }
+
+  .header-element:nth-child(3){
+    padding-bottom: 2%;;
+  }
+
+  .nav-mobile{
+    display: block;
+    position: absolute;
+    top: 3%;
+    right: 3%;
+  }
+  .nav-web{
+    display: none;
+  }
+}

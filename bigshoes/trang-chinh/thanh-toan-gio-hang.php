@@ -1,4 +1,4 @@
-<<?php 
+<?php 
 ob_start(); 
  ?>
 
@@ -9,7 +9,6 @@ ob_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../bigshoes/css/chi-tiet-sp/products.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
@@ -21,7 +20,14 @@ ob_start();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../../bigshoes/css/danh-sach-sp/products.css">
+    <link rel="stylesheet" href="../../bigshoes/css/chi-tiet-sp/products.css">
     <title>Document</title>
+    <style>
+        /* *{
+            width: 100%;
+        } */
+    </style>
 </head>
 
 <body>
@@ -29,9 +35,9 @@ ob_start();
     <script type="text/javascript" src="../../bigshoes/css/chi-tiet-sp/plugin/js/owl.carousel.min.js"></script>
 
 
-    <div class="container-fluid">
+    <div class="container-fluid ">
         <div class="row">
-            <div class="col-md-4" style="background-color: rgb(54, 54, 54);text-align: center">
+            <div class="col-md-4 header-element">
                 <div class="login">
 
 
@@ -42,59 +48,65 @@ ob_start();
                   ?>
                   <a href="../../bigshoes/tai-khoan/dang-nhap.php"><p><strong>ĐĂNG NHẬP / ĐĂNG KÍ</strong></p></a> 
                     <?php }else{ ?>
-                        <a href="../../bigshoes/tai-khoan/thong-tin-tk.php"><p><strong>XIN CHÀO <?=$_SESSION['user']['ho_ten']?></strong></p></a>
+                  <a href="../../bigshoes/tai-khoan/thong-tin-tk.php"><p><strong>XIN CHÀO <?=$_SESSION['user']['ho_ten']?></strong></p></a>
                   <?php } ?>
                 </div>
 
 
 
             </div>
-            <div class="col-md-4" style="background-color: rgb(54, 54, 54);text-align: center">
+            <div class="col-md-4 header-element">
                 <div class="logo">
                 <a href="index.php"><img src="../css/trang-chu/img/logo11.png" alt="anh"></a>
                 </div>
             </div>
-            <div class="col-md-4" style="background-color: rgb(54, 54, 54);text-align: center">
+            <div class="col-md-4 header-element">
                 <!-- MÃ CODE PHP CHECK SỐ LƯỢNG SẢN PHẨM THÊM VÀO GIỎ HÀNG  -->
 
-                <div class="giohang" style = "position: reletive;">
-               
+                <div class="giohang" style = "position: relative;">
+                <ul style="list-style-type: none;">
+                        <!-- <li><p style="color: rgb(212, 212, 212);font-size: 14px;">GIỎ HÀNG</p></li> -->
+                    <a href="danh-sach-gio-hang.php"><li><i class="fa fa-shopping-basket" style="font-size:28px;color:rgb(255, 255, 255)"></i>
                     <?php
-                            $sll = 0;
-                            if(isset($_SESSION['cart'])){
-                                foreach($_SESSION['cart'] as $item){
-                                    extract($item);
-                                    $sll+= $sl;
-                                }
+                        $sll = 0;
+                        if(isset($_SESSION['cart'])){
+                            foreach($_SESSION['cart'] as $item){
+                                extract($item);
+                                $sll+= $sl;
                             }
-                        ?>
-                    <span style = "position: absolute;padding:3px 8px;background-color:#fff;border-radius:50px;left:295px;top:25px;" ><?=$sll?></span>
-                <ul>
-                        <li><i class="fa fa-search" style="font-size:20px;color:rgb(226, 226, 226)"></i></li>
-                        <li><p style="color: rgb(212, 212, 212);font-size: 14px;">GIỎ HÀNG</p></li>
-                       <a href="danh-sach-gio-hang.php"><li><i class="fa fa-shopping-basket" style="font-size:28px;color:rgb(255, 255, 255)"></i></li></a> 
-                    </ul>
+                        }
+                    ?>
+                    <span style = "position: relative;padding:3px 8px;background-color:#fff;border-radius:50px;left:1%;" ><?=$sll?></span></li></a> 
+                    
+                </ul>
                 </div>
             </div>
         </div>
     </div>
 
 
+    <div class="dropleft nav-mobile">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-expanded="false" style="background-color: #d7d6d6; color: black;">
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="index.php">TRANG CHỦ</a></li>
+            <li><a class="dropdown-item" href="danh-sach-sp.php">SẢN PHẨM</a></li>
+            <li><a class="dropdown-item" href="gioi-thieu.php">GIỚI THIỆU</a></li>
+            <li><a class="dropdown-item" href="tin-tuc.php">TIN TỨC</a></li>
+            <li><a class="dropdown-item" href="lien-he.php">LIÊN HỆ</a></li>
+        </ul>
+    </div>   
 
-
-
-
-
-    <div class="container-fluid">
+    <div class="container-fluid nav-web">
         <div class="row">
             <div class="col-md-12" style="background-color: rgb(211, 211, 211);">
                 <div class="nav">
                     <ul>
                         <li><a href="danh-sach-sp.php">TRANG CHỦ</a></li>
                         <li><a href="danh-sach-sp.php">SẢN PHẨM</a></li>
-                            <li><a href="gioi-thieu.php">GIỚI THIỆU</a></li>
-                            <li><a href="tin-tuc.php">TIN TỨC</a></li>
-                            <li><a href="lien-he.php">LIÊN HỆ</a></li>
+                        <li><a href="gioi-thieu.php">GIỚI THIỆU</a></li>
+                        <li><a href="tin-tuc.php">TIN TỨC</a></li>
+                        <li><a href="lien-he.php">LIÊN HỆ</a></li>
                     </ul>
                 </div>
             </div>
@@ -105,29 +117,10 @@ ob_start();
 
     <div class="container" style="margin-top: 20px;">
         <div class="row">
-            <div class="col-md-7" style="
-    padding-left: 0px;
-">
+            <div class="col-md-7" style="padding-left: 0px;">
                 <div class="chuyen">
                     <p><i class="fa fa-home" style="font-size:24px"></i> <span>TRANG CHỦ </span> / THANH TOÁN</p>
                 </div>
-            </div>
-            <div class="col-md-5" style="padding-right: 0px;">
-                <div class="thutu">
-                    <ul>
-                        <li>
-                            <p style="margin-top: 10px;">Hiển thị tất cả các sản phẩm</p>
-                        </li>
-                        <li>
-                            <select>
-                               <option>Thứ tự mặc định</option>
-                               <option>Thứ tự theo mức độ phổ biến</option>
-                               <option>Thứ tự thấp đến cao</option>
-                           </select>
-                        </li>
-                    </ul>
-                </div>
-
             </div>
         </div>
     </div>
@@ -152,7 +145,7 @@ ob_start();
         <form action="" method="post">
         <h4>THÔNG TIN THANH TOÁN</h4>
         <br>
-        <table class="table table-borderless" border = "0">
+        <table class="table table-borderless">
         <input type="text" class="form-control" id="" name="ma_kh" value="<?=$ma_kh?>" hidden>
             <tr>
                 <div class="form-group">
@@ -188,7 +181,7 @@ ob_start();
             <thead>
                 <tr>
                     <th>SẢN PHẨM</th>
-                    <th  style = "text-align:right;">TỔNG</th>
+                    <th style = "text-align:right;">TỔNG</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -211,34 +204,23 @@ ob_start();
                 </tr>
                 <?php }} ?>
                 <tr>
-                    <td><b>Tổng phụ</b></td>s
+                    <td><b>Tổng phụ</b></td>
                     <td style = "text-align:right;"><b><?=number_format($total)?> VNĐ</b></td>
                 </tr>
                 <tr>
                     <td><b>Giao hàng</b></td>
-                    <td style = "text-align:right;">Giao hàng miễn phí <br>
-                    dưới 5km <br>
-                    Đổi địa chỉ</td>
+                    <td style = "text-align:right;">Giao hàng miễn phí
+                    dưới 5km</td>
                 </tr>
                 <tr>
                     <td><b>TỔNG</b></td>
                     <td style = "text-align:right;"><b><?=number_format($total)?> VNĐ</b></td>
                 </tr>
                 <tr>
-                    <td colspan = "2"><b>Phiếu ưu đãi</b></td>
-                </tr>
-                <tr>
-                    <td colspan = "2">
-                    <input type="text" class="form-control" placeholder="Mã ưu đãi"><br>
-                    <button class = "btn btn-light" style = "width:100%;"><b>ÁP DỤNG</b></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2"><i>Quý khách vui lòng kiểm tra lại thông tin giao hàng và thông tin đơn hàng để tiến hành đặt hàng. Quý khách có thể tra cứu tình trạng đơn hàng tại TheCloser.com. Chúc quý khách ngày mới tốt lành !</i></td>
+                    <td colspan="2"><i>Quý khách vui lòng kiểm tra lại thông tin giao hàng và thông tin đơn hàng để tiến hành đặt hàng. Cảm ơn quý khách đã mua sản phẩm tại cửa hàng chúng tôi.</i></td>
                 </tr>
                 <tr>
                         <td><button type="submit" name="dathang" class="btn btn-danger"><b>ĐẶT HÀNG</b></button></td>
-                        <td><button type="submit" name="dathangonline" class="btn btn-danger">ĐẶT HÀNG VÀ THANH TOÁN ONLINE</a></button></td>
                 </tr>
                 </tbody>
             </table>        
@@ -332,7 +314,7 @@ ob_start();
                     echo"<script>
                     alert($total);
                     </script>";
-                    header("Location: http://localhost/bigshoes/vnpay_php/index.php?order_id=" .$ma_hd. "&total=".$total);
+                    header("Location: http://localhost/BTL_WEB/bigshoes/vnpay_php/index.php?order_id=" .$ma_hd. "&total=".$total);
                     exit();
                 } 
 
@@ -486,6 +468,9 @@ ob_start();
                 }
             }
         })
+        $(document).ready(function () {
+            $('.dropdown-toggle').dropdown();
+        });
     </script>
 
 

@@ -14,6 +14,7 @@
     <link href="../../../css/admin/css/custom-styles.css" rel="stylesheet" />
      <!-- Google Fonts-->
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+   
 </head>
 <body>
     <div id="wrapper">
@@ -99,52 +100,36 @@
         </nav>
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
-		  <div class="header"> 
+		    <div class="header"> 
                         <div class="page-header">
                             <h1>QUẢN LÝ HÀNG HÓA</h1>
                             <p>Dưới đây là danh sách các hàng hóa đã được thêm vào: </p>
 
+                            <div class="row" style="margin-left: 0px;">                  
+                            <!-- Tìm kiếm theo tên sản phẩm -->
+                            <div class="input-group">
+                                <form action="hang-hoa-tim-kiem.php" method="post">
+                                    <div class="serch" style="position: relative;display:flex;flex-wrap:wrap;align-items: stretch;width:100%;">
+                                        <div class="form-outline"><input type="text" placeholder="Tìm kiếm..." class="form-control" name="keywords"></div>
+                                        <button type="submit" class="btn btn-primary" name="search-keywords"><i class="fa fa-search" style="font-size:20px;color:rgb(255, 255, 255)"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                            </div>
+
                             <!-- /. XỬ LÝ CODE PHP  -->
-                            <?php
-                                require_once ('../../dao/hang-hoa.php');
-                                
-                                $items = hang_hoa_select_all();
-                            ?>
-                            <!-- /. CONTENT  -->
-                            <table class="table table-hover">
-                                <thead>
-                                  <tr>
-                                    <th>MÃ HH</th>
-                                    <th>TÊN HH</th>
-                                    <th>HÌNH ẢNH</th>
-                                    <th>ĐƠN GIÁ</th>
-                                    <th>GIẢM GIÁ</th>
-                                    <th>HÀNH ĐỘNG</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                <?php foreach($items as $item){ //lấy tt của mảng
-                                     extract($item);
-                                    ?> 
-                                  <tr>
-                                    <td><?=$ma_hh?></td>
-                                    <td><?=$ten_hh?></td>
-                                    <td><img src="/bigshoes/css/admin/images/products/<?=$hinh?>" alt="" style="width:80px;"></td>
-                                    <td><?=number_format($don_gia)?> <sup>đ</sup></td>
-                                    <td><?=$giam_gia?> <sup>%</sup></td>
-                                    <td> 
-                                        <a href="hang-hoa-update.php?ma_hh=<?=$ma_hh?>"><button class="btn btn-primary">Sửa</button></a>
-                                        <a onclick = "return confirm('Bạn có chắc chắn muốn xóa ?')" href="hang-hoa-delete.php?ma_hh=<?=$ma_hh?>"><button class="btn btn-danger">Xóa</button></a>
-                                    </td>
-                                  </tr>
-                                <?php } ?>
-                                </tbody>
-                              </table>
+                            <div id="ajax_wrapper">
+                                <table class="table table-hover">
+                                    <?php
+                                        require_once 'ajax_pagination.php';
+                                    ?>
+                                </table>
+                            </div>
                             <a href="hang-hoa-new.php"><button class="btn btn-danger">Thêm mới</button></a>
                         </div>
-		</div>
+		    </div>
             </div>
-         <!-- /. PAGE WRAPPER  -->
+        <!-- /. PAGE WRAPPER  -->
         </div>
      <!-- /. WRAPPER  -->
     <!-- JS Scripts-->
@@ -156,6 +141,22 @@
     <script src="../../../css/admin/js/jquery.metisMenu.js"></script>
       <!-- Custom Js -->
     <script src="../../../css/admin/js/custom-scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="../../../css/admin/js/pagination.js">
+        // $(document).on( "click", ".pagination .active", function(e) {
+        // var pageValue = $(this).attr("data-page");
+ 
+        //     $.ajax({
+        //         url: '/hang-hoa-list.php?limit=10&page='+pageValue,
+        //         type: "GET",
+        //         success: function(data){
+        //             $("#ajax_wrapper").html(data); 
+        //         }
+        //     });
+ 
+        //     e.preventDefault();
+        // });
+    </script>
     
    
 </body>

@@ -300,3 +300,67 @@
 table tr td {
   padding: 2px 10px;
 }
+
+.header-element{
+  background-color: rgb(54, 54, 54);
+  text-align: center;
+}
+
+.item img{
+  width: 200px;
+}
+
+@media only screen and (max-width: 768px){
+  .content{
+    display: block;
+  }
+  .card{
+    display: inline-block;
+    width: 48%;
+    
+  }
+  .card img{
+    width: 100%;
+  }
+
+  .latest-news{
+    display: none;
+  }
+
+  .search-bar{
+    text-align: center;
+    justify-content: center;
+  }
+
+  .logo{
+    display: none;
+  }
+
+  .header-element:nth-child(3){
+    padding-bottom: 2%;;
+  }
+
+  .item img{
+    width: 100%;
+  }
+
+  .noi-bat{
+    left: 87%;
+  }
+}
+
+.nav-mobile{
+  display: none;
+}
+
+@media only screen and (max-width: 768px){
+  .nav-mobile{
+    display: block;
+    position: absolute;
+    top: 3%;
+    right: 3%;
+  }
+  .nav-web{
+    display: none;
+  }
+}
